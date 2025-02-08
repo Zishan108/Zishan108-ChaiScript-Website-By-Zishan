@@ -98,6 +98,7 @@
         }
         .sidebar a:hover {
             color: #27ae60;
+            text-decoration: underline;
         }
         .main-content {
             margin-left: 305px;
@@ -185,6 +186,24 @@
         .purple{
             color: #8F00FF;
         }
+        .title-hr{
+            border: 1px solid #313131;
+        }
+
+        .subtitle-hr{
+            border:0.5px solid rgb(198, 198, 198);
+        }
+
+        #note-alert{
+            display: flex;
+            align-items: center;
+            border-radius: 7px;
+            background-color: #f1e67d;
+            height: 3rem;
+        }
+        #note-alert p{
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -211,6 +230,8 @@
             <a href="#data-types">Data Types</a>
             <a href="#ChaiScript-Number">Numbers</a>
             <a href="#ChaiScript-Strings">Strings</a>
+            <a href="#ChaiScript-List">List</a>
+            <a href="#ChaiScript-Booleans">Booleans</a>
             <a href="#control-structures">Control Structures</a>
             <a href="#functions">Functions</a>
             <a href="#data-handling">Data Handling</a>
@@ -231,12 +252,15 @@
             <p>ChaiScript has a very similar syntax like python and shell scripting with a twist of chai oriented keywords</p>
             <p>ChaiScript uses new lines to complete a command. But you can also use semi-colons to complete a command (paying tribute to Java as it is one of my favourite language)</p>
             <p>There is no use of indentation or curly braces for seperating code blocks or scopes as well</p>
+            <hr class="title-hr">
         
             <h2 class="section-title" id="getting-started">Getting Started</h2>
             <p>To Use ChaiScript you need ChaiScript Interpreter, which can be downloaded from download section of my website. There I have showed the complete process of how to download the ChaiScript Interpreter</p>
             <p>Click the below button to redirect to the download page </p>
             <a href="download.html" class="btn">Downloads</a>
             <p>You can also checkout the VS code extension for ChaiScript which is very useful while running ChaiScript in Script mode as it gives the Functionality of Syntax highlighting as well as auto-completion</p>
+
+            <hr class="title-hr">
         
             <h2 class="section-title" id="syntax" style="margin-top: 40px;">Basic Syntax</h2>
             <p>ChaiScript syntax can be executed by writing directly in the Command Line:</p>
@@ -252,6 +276,7 @@
                     <p>ChaiScript > run("myFile.chai")</p>
                 </div>
             </div>
+            <hr class="title-hr">
 
             <h2 class="section-title" id="variables">Variables</h2>
             <p>Variables are containers for storing data</p>
@@ -268,19 +293,24 @@
                 <img src="img/doc2.png" alt="" class="doc-img" id="doc-2img">
                 <button id="btn2" class="btn" onclick="copyCode2()">Copy</button>
             </div>
-
+            
+            <hr class="subtitle-hr">
             <h2>Casting</h2>
             <p>If you want to specify the data type of a variable, this can be done with casting.</p>
             <div class="but_and_img">
                 <img src="img/doc3.png" alt="" class="doc-img" id="doc-2img">
                 <button class="btn" id="btn3" onclick="copyCode3()">Copy</button>
             </div>
+
+            <hr class="subtitle-hr">
             <h2>Get The Type</h2>
             <p>You can get the data type of a variable with the <code style="color: #27ae60;"> type_chai() </code>function.</p>
             <div class="but_and_img">
                 <img src="img/doc4.png" alt="" class="doc-img" id="doc-2img">
                 <button id="btn4" class="btn" onclick="copyCode4()">Copy</button>
             </div>
+            <hr class="subtitle-hr">
+            
             <h2>Case Sensitive</h2>
             <p>Variable names are case-sensitive.</p>
             <p>This will create two different variables:</p>
@@ -289,6 +319,8 @@
                 <button id="btn4" class="btn" onclick="copyCode5()">Copy</button>
             </div>
             <br>
+            <hr class="title-hr">
+
             <h2 class="section-title" id="data-types">Data types</h2>
             <h2>Built-in Data Types</h2>
             <p>In programming, data type is an important concept.
@@ -297,6 +329,7 @@
                 
                 ChaiScript has the following data types built-in by default:
             </p>
+            <hr class="subtitle-hr">
 
             <h2 class="purple">
                 1. String
@@ -304,6 +337,7 @@
 
             <p>Strings in ChaiScript are surrounded by double quotation marks.</p>
             <p>eg.; <pre><code style="color: red;">"Hello, World!"</code></pre></p>
+            <hr class="subtitle-hr">
 
             <h2 class="purple">
                 2. Numbers
@@ -312,6 +346,7 @@
             <p>Number is an Parent data-type and have to children data type <i>Integer</i> and <i>Float</i></p>
             <p>eg.; <pre><code style="color: red;">12<br><br>12.12</code></pre></p>
             <p>This idea of combining the int and float data-type into one single data-type called Number has been inspired from JavaScript</p>
+            <hr class="subtitle-hr">
 
             <h2 class="purple">
                 3. List
@@ -320,6 +355,7 @@
             <p>Lists are used to store multiple items in a single variable.</p>
             <p>Lists are created using square brackets:</p>
             <p>eg.; <pre><code style="color: red;">["apple", "banana", "cherry"] <br><br>[12, 1212, 1221] <br><br>["Zishan", 19, "ChaiScript", 12.12, ["meow", "moo"], true]</code></pre></p>
+            <hr class="subtitle-hr">
 
             <h2 class="purple">
                 4. Boolean
@@ -327,9 +363,12 @@
 
             <p>In programming you often need to know if an expression is <pre style="display: inline;"><code style="color: red;">true</code></pre> or <pre style="display: inline;"><code style="color: red;">false</code></pre>.</p>
             <p style="display: inline;">Only keywords <pre style="display: inline;"><code style="color: red;">true</code></pre> <p style="display: inline;">and</p> <pre style="display: inline;"><code style="color: red;">false</code><p style="display: inline;"> are considered Boolean types (not even 0 and 1 are included).</p></pre></p>
+            <p>In ChaiScript, when we check the type of Boolean value it returns "number" because the Interpreter recognises true as 1 and false as 0 </p>
             <p>eg.; <pre><code style="color: red;">true <br><br>false</code></pre></p>
 
             <p>For ChaiScript version - 0.1.0 only Strings, Numbers, Boolean and Lists are added. Ofcourse I am planning to add tons of more data-types in future (if i don't forget that i have to work on this project......)</p>
+            <hr class="subtitle-hr">
+
             <h2>Setting the Data-type</h2> <br>
 
             <p>In ChaiScript, the data type is set when you assign a value to a variable:</p>
@@ -408,6 +447,7 @@
                   </tr>
                 </tbody>
               </table> <br><br>
+              <hr class="title-hr">
             
             <h2 class="section-title" id="ChaiScript-Number">ChaiScript Numbers</h2>
             <p>There are two numeric types in ChaiScript:</p>
@@ -421,6 +461,7 @@
                 <code style="background: none;">cup x = 42; &nbsp; &nbsp; #int <br> cup y = 3.14; &nbsp;&nbsp;#float</code>
 
             </div>
+            <hr class="subtitle-hr">
             
             <h2 style="color: #8F00FF;">Int</h2>
             <p>Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.</p>
@@ -445,6 +486,7 @@
                 
                 </button>
             </div>
+            <hr class="subtitle-hr">
 
             <h2 style="color: #8F00FF;">Float</h2>
             <p>Float, or "floating point number" is a number, positive or negative, containing one or more decimals.</p>
@@ -470,6 +512,8 @@
                 
                 </button>
             </div>
+            <br>
+            <hr class="title-hr">
 
             <h2 class="section-title" id="ChaiScript-Strings">Strings</h2>
             <p>Strings in ChaiScript are surrounded by double quotation marks.</p>
@@ -487,6 +531,7 @@
                 
                 </button>
             </div>
+            <hr class="subtitle-hr">
 
             <h2>Assign String to a variable: </h2>
             <p>Assigning a string to a variable is done with the variable name followed by an equal sign and the string:</p>
@@ -502,7 +547,8 @@
                     Copy
                 
                 </button>
-            </div>            
+            </div>   
+            <hr class="subtitle-hr">         
 
             <h2>Multiline Strings: </h2>
             <p>You can assign a multiline string to a by simply using double quotation marks:</p>
@@ -521,11 +567,13 @@
                     Copy
                 
                 </button>
-            </div>              
+            </div> 
+            <hr class="subtitle-hr">             
 
             <h2>Strings are Arrays</h2>
             <p>Like many other popular programming languages, strings in ChaiScript are arrays of bytes representing unicode characters.</p>
             <p>However, ChaiScript does not have a character data type, a single character is simply a string with a length of 1.</p>
+            <hr class="subtitle-hr">
 
             <h2>Length of a String: </h2>
             <p style="display: inline;">To get the length of a string, use the <pre style="display: inline;"><code style="display: inline;color:red;">str_len()</code></pre></p> <p style="display: inline;"> or</p> <pre style="display: inline;"><code style="display: inline; color:red;">len()</code></pre> <p style="display: inline;"> Function</p> <br><br><br>
@@ -561,6 +609,135 @@
                 
                 </button>
             </div> 
+            <br><br>
+            <hr class="title-hr">
+
+            <h2 class="section-title" id="ChaiScript-List">ChaiScript List</h2>
+            <p>Lists are used to store multiple items in a single variable.</p>
+            <p>Lists are created using square brackets:</p>
+            
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 600px;">
+                <code style="background: none;">
+                    cup my_list = ["apple", "banana", "cherry"]; <br>serveChai(my_list); <br><br>#output: ["apple", "banana", "cherry"]
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick='copyToClipboard(`cup my_list = ["apple", "banana", "cherry"];\nserveChai(my_list);`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+            <hr class="subtitle-hr">
+
+            <h2>List Items</h2>
+            <p>List items are ordered, changeable, and allow duplicate values.</p>
+            <p>List items are indexed, the first item has index [0], the second item has index [1] etc.</p>
+            <br><br>
+            <hr class="subtitle-hr">
+
+            <h2>Ordered</h2>
+            <p>When we say that lists are ordered, it means that the items have a defined order, and that order will not change.</p>
+            <p>If you add new items to a list, the new items will be placed at the end of the list.</p>
+
+            <div id="note-alert">
+                <p><b>Note: </b>There are some <u>list methods</u> that will change the order, but in general: the order of the items will not change.</p>
+            </div>
+            <br>
+            <hr class="subtitle-hr">
+
+            <h2>Changeable</h2>
+            <p>The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.</p>
+            <hr class="subtitle-hr">
+
+            <h2>Allow Duplicates</h2>
+            <p>Since lists are indexed, lists can have items with the same value:</p>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 700px;">
+                <code style="background: none;">
+                    cup my_list = ["apple", "banana", "cherry", "apple"]; <br>serveChai(my_list); <br><br>#output: ["apple", "banana", "cherry", "apple"]
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick='copyToClipboard(`cup my_list = ["apple", "banana", "cherry", apple];\nserveChai(my_list);`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+            <hr class="subtitle-hr">
+
+            <h2>List Items - Datatypes</h2>
+            <p>List items can be of any data type.</p>
+            <p>no need of statically defining the datatype</p>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 700px;">
+                <code style="background: none;">
+                    cup list1 = ["apple", "banana", "cherry"]; <br>cup list2 = [12, 24, 1212]; <br>cup list3 = [12.12, 12.03, 3.14] <br>cup list4 = ["zishan", 19, 12.12, true];
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick='copyToClipboard(`cup list1 = ["apple", "banana", "cherry"]; \ncup list2 = [12, 24, 1212]; \ncup list3 = [12.12, 12.03, 3.14] \ncup list4 = ["zishan", 19, 12.12, true];`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+            <hr class="subtitle-hr">
+
+            <h2>List length</h2>
+            <p>List has two methods two retrieve its length:</p>
+
+            <p style="color: red;">1. list_len() :</p>
+            <p>This is an exclusive len method for list which can only be used on a list</p>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 600px;">
+                <code style="background: none;">
+                    cup my_list = ["apple", "banana", "cherry"]; <br>list_len(my_list); &nbsp; &nbsp; #output: 3
+                    
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick='copyToClipboard(`cup list1 = ["apple", "banana", "cherry"]; \nlist_len(my_list);`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+
+            <p style="color: red;">2. len() :</p>
+            <p>This method also retrieves the length of list but it can be used on any iterative datatype</p>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 600px;">
+                <code style="background: none;">
+                    cup my_list = ["apple", "banana", "cherry"]; <br>len(my_list); &nbsp; &nbsp; #output: 3
+                    
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick='copyToClipboard(`cup list1 = ["apple", "banana", "cherry"]; \nlen(my_list);`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+            <hr class="title-hr">
+
+            <h2 class="section-title" id="ChaiScript-Booleans">Booleans</h2>
+            <p>In programming you often need to know if an expression is <pre style="display: inline;"><code style="color: red;">true</code></pre> or <pre style="display: inline;"><code style="color: red;">false</code></pre>.</p>
+            <p style="display: inline;">Only keywords <pre style="display: inline;"><code style="color: red;">true</code></pre> <p style="display: inline;">and</p> <pre style="display: inline;"><code style="color: red;">false</code><p style="display: inline;"> are considered Boolean types (not even 0 and 1 are included).</p></pre></p>
+            <p>In ChaiScript, when we check the type of Boolean value it returns "number" because the Interpreter recognises true as 1 and false as 0 </p>
+            
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 500px;">
+                <code style="background: none;">
+                    cup my_true = 1212 > 12 ; <br>cup my_false = 12 == 13;<br><br>serveChai(my_true) <br>serveChai(my_false);
+                    
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick='copyToClipboard(`cup my_true = 1212 > 12 ; \ncup my_false = 12 == 13;\n \nserveChai(my_true) \nserveChai(my_false);`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+            <hr class="title-hr">
 
             <h2 class="section-title" id="control-structures">Control Structures</h2>
             <p>Learn about conditionals and loops...</p>
