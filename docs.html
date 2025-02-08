@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiScript - Docs</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #333, #27ae60);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .btn {
+            border: none;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease-in;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn:hover {
+            background-color: #15ff00;
+            border-radius: 5px;
+            transform: translateY(-2px);
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            background-color: #333333;
+            color: #fff;
+            width: 250px;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            font-size: 1.2em;
+            margin-top: 70px;
+        }
+        .sidebar a {
+            display: block;
+            color: #fff;
+            padding: 8px 0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .sidebar a:hover {
+            color: #27ae60;
+        }
+        .main-content {
+            margin-left: 305px;
+            padding: 20px;
+            width: calc(100% - 250px);
+            padding-bottom: 60px; /* Space for footer */
+        }
+        .section-title {
+            color: #27ae60;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: auto;
+        }
+        footer a {
+            color: #27ae60;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .main-content p {
+            font-size: 20px;
+        }
+        code {
+            font-size: 18px;
+            background-color: #e9e3e3;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .doc-container{
+            height: 5rem;
+            max-width: 100%;
+            border-radius: 8px;
+            background-color: #E7E9EB;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        .docs{
+            color: white;
+            max-width: 100%;
+            width: 90%;
+            background-color: black;
+            height: 3rem;
+            border-left: 4px solid #27ae60;
+        }
+        .docs p{
+            font-family: Consolas, Menlo, "courier new", monospace;
+            font-size: 16px;
+            margin: 0px;
+            padding: 0px;
+
+        }
+        .doc-img{
+            height: 158px;
+            width: 281px;
+            border-radius: 8px;
+        }
+        #doc-2img{
+            height: 198px;
+            width: 452px;
+        }
+
+        .but_and_img{
+            max-width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #faulty-img-1{
+            width: 382px;
+            height: 211px;
+        }
+
+        .purple{
+            color: #8F00FF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="img/ChaiScript.png" alt="ChaiScript Logo">
+            ChaiScript
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="docs.html">Docs</a>
+            <a href="about.html">About</a>
+            <a href="download.html" class="btn">Downloads</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Documentation</h2>
+            <a href="#introduction">Introduction</a>
+            <a href="#getting-started">Getting Started</a>
+            <a href="#syntax">Basic Syntax</a>
+            <a href="#variables">Variables</a>
+            <a href="#data-types">Data Types</a>
+            <a href="#ChaiScript-Number">Numbers</a>
+            <a href="#ChaiScript-Strings">Strings</a>
+            <a href="#control-structures">Control Structures</a>
+            <a href="#functions">Functions</a>
+            <a href="#data-handling">Data Handling</a>
+            <a href="#error-handling">Error Handling</a>
+            <a href="#advanced">Advanced Topics</a>
+            <a href="#examples">Examples & Projects</a>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="section-title" id="introduction">Introduction</h1>
+            <p>ChaiScript is an interpreted language best suited for learning coding and compatible with every Operating System</p>
+            <p>I Created this language just out of curiosity of how a programming language works when it runs a program. If you notice, the language has similar syntax and flow of code like Python, JavaScript and shell programming. It is highly inspired by Python</p>
+            <p>Just Like Python you can code in ChaiScript by both interactive mode (directly through command line) and Script mode (By making a <code>.chai</code> extension file in Interpreter folder and running it through command line)</p>
+            <p>ChaiScript has easy to Understand syntax with a twist of `chai` oriented keywords. It is a "Chai" Programming language made in Python</p>
+            <h2>Why ChaiScript?</h3>
+            <p>ChaiScript has been made by me to make coding interesting and easy to Understand. This language is completely made by me alone and this language is not for industry level use. I just made this language for learning purpose and out of curiosity</p>
+            <h2>ChaiScript Syntax and flow of program</h2>
+            <p>ChaiScript has a very similar syntax like python and shell scripting with a twist of chai oriented keywords</p>
+            <p>ChaiScript uses new lines to complete a command. But you can also use semi-colons to complete a command (paying tribute to Java as it is one of my favourite language)</p>
+            <p>There is no use of indentation or curly braces for seperating code blocks or scopes as well</p>
+        
+            <h2 class="section-title" id="getting-started">Getting Started</h2>
+            <p>To Use ChaiScript you need ChaiScript Interpreter, which can be downloaded from download section of my website. There I have showed the complete process of how to download the ChaiScript Interpreter</p>
+            <p>Click the below button to redirect to the download page </p>
+            <a href="download.html" class="btn">Downloads</a>
+            <p>You can also checkout the VS code extension for ChaiScript which is very useful while running ChaiScript in Script mode as it gives the Functionality of Syntax highlighting as well as auto-completion</p>
+        
+            <h2 class="section-title" id="syntax" style="margin-top: 40px;">Basic Syntax</h2>
+            <p>ChaiScript syntax can be executed by writing directly in the Command Line:</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>ChaiScript > serveChai("Hello, world!")</p>
+                    <p>Hello, world!</p>
+                </div>
+            </div>
+            <p>Or by creating a ChaiScript file in the Interpreter folder, using the .chai file extension, and running it in the Command Line:</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>ChaiScript > run("myFile.chai")</p>
+                </div>
+            </div>
+
+            <h2 class="section-title" id="variables">Variables</h2>
+            <p>Variables are containers for storing data</p>
+            <p>To create a Variable in ChaiScript the <code><i>cup</i></code> is used along with variable name</p>
+            <p>ChaiScript has no command for declaring a variable. A variable is created the moment you first assign a value to it.</p>
+            <div class="but_and_img">
+                <img src="img/doc1.png" alt="" class="doc-img">
+                <button id="btn1" class="btn" onclick="copyCode1()">Copy</button>
+             </div>
+
+            <p>Variables do not need to be declared with any particular type as ChaiScript is a <b>Dynamically typed programming language</b>, and can even change type after they have been set.</p>
+            <h2>Example:</h2>
+            <div class="but_and_img">
+                <img src="img/doc2.png" alt="" class="doc-img" id="doc-2img">
+                <button id="btn2" class="btn" onclick="copyCode2()">Copy</button>
+            </div>
+
+            <h2>Casting</h2>
+            <p>If you want to specify the data type of a variable, this can be done with casting.</p>
+            <div class="but_and_img">
+                <img src="img/doc3.png" alt="" class="doc-img" id="doc-2img">
+                <button class="btn" id="btn3" onclick="copyCode3()">Copy</button>
+            </div>
+            <h2>Get The Type</h2>
+            <p>You can get the data type of a variable with the <code style="color: #27ae60;"> type_chai() </code>function.</p>
+            <div class="but_and_img">
+                <img src="img/doc4.png" alt="" class="doc-img" id="doc-2img">
+                <button id="btn4" class="btn" onclick="copyCode4()">Copy</button>
+            </div>
+            <h2>Case Sensitive</h2>
+            <p>Variable names are case-sensitive.</p>
+            <p>This will create two different variables:</p>
+            <div class="but_and_img">
+                <img id="faulty-img-1" src="img/doc5.png" alt="" class="doc-img" id="doc-2img">
+                <button id="btn4" class="btn" onclick="copyCode5()">Copy</button>
+            </div>
+            <br>
+            <h2 class="section-title" id="data-types">Data types</h2>
+            <h2>Built-in Data Types</h2>
+            <p>In programming, data type is an important concept.
+                
+                Variables can store data of different types, and different types can do different things.
+                
+                ChaiScript has the following data types built-in by default:
+            </p>
+
+            <h2 class="purple">
+                1. String
+            </h2>
+
+            <p>Strings in ChaiScript are surrounded by double quotation marks.</p>
+            <p>eg.; <pre><code style="color: red;">"Hello, World!"</code></pre></p>
+
+            <h2 class="purple">
+                2. Numbers
+            </h2>
+
+            <p>Number is an Parent data-type and have to children data type <i>Integer</i> and <i>Float</i></p>
+            <p>eg.; <pre><code style="color: red;">12<br><br>12.12</code></pre></p>
+            <p>This idea of combining the int and float data-type into one single data-type called Number has been inspired from JavaScript</p>
+
+            <h2 class="purple">
+                3. List
+            </h2>
+
+            <p>Lists are used to store multiple items in a single variable.</p>
+            <p>Lists are created using square brackets:</p>
+            <p>eg.; <pre><code style="color: red;">["apple", "banana", "cherry"] <br><br>[12, 1212, 1221] <br><br>["Zishan", 19, "ChaiScript", 12.12, ["meow", "moo"], true]</code></pre></p>
+
+            <h2 class="purple">
+                4. Boolean
+            </h2>
+
+            <p>In programming you often need to know if an expression is <pre style="display: inline;"><code style="color: red;">true</code></pre> or <pre style="display: inline;"><code style="color: red;">false</code></pre>.</p>
+            <p style="display: inline;">Only keywords <pre style="display: inline;"><code style="color: red;">true</code></pre> <p style="display: inline;">and</p> <pre style="display: inline;"><code style="color: red;">false</code><p style="display: inline;"> are considered Boolean types (not even 0 and 1 are included).</p></pre></p>
+            <p>eg.; <pre><code style="color: red;">true <br><br>false</code></pre></p>
+
+            <p>For ChaiScript version - 0.1.0 only Strings, Numbers, Boolean and Lists are added. Ofcourse I am planning to add tons of more data-types in future (if i don't forget that i have to work on this project......)</p>
+            <h2>Setting the Data-type</h2> <br>
+
+            <p>In ChaiScript, the data type is set when you assign a value to a variable:</p>
+
+            <table style="width: 100%; border-collapse: collapse; background-color: #E7E9EB; border: 1px solid #333;">
+                <thead>
+                  <tr style="background-color: #333333; color: #fff; border: 1px solid #fff;">
+                    <th style="padding: 10px; text-align: left; border: 1px solid #fff;">Examples</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #fff;">Data Type</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #fff;">Copy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Number -->
+                  <tr>
+                    <td style="padding: 10px; background-color: #e9e3e3; border: 1px solid #333;">
+                      <code style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60;">cup x = 42;</code>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #333;">Number</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #333;">
+                      <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer;"
+                        onclick="copyToClipboard('cup x = 42;')">Copy</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 10px; background-color: #e9e3e3; border: 1px solid #333;">
+                      <code style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60;">cup pi = 3.14;</code>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #333;">Number</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #333;">
+                      <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer;"
+                        onclick="copyToClipboard('cup pi = 3.14;')">Copy</button>
+                    </td>
+                  </tr>
+                  <!-- String -->
+                  <tr>
+                    <td style="padding: 10px; background-color: #e9e3e3; border: 1px solid #333;">
+                      <code style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60;">cup name = "Alice";</code>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #333;">String</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #333;">
+                      <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer;"
+                        onclick='copyToClipboard("cup name = \"Alice\";")'>Copy</button>
+                    </td>
+                  </tr>
+                  <!-- List -->
+                  <tr>
+                    <td style="padding: 10px; background-color: #e9e3e3; border: 1px solid #333;">
+                      <code style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60;">cup numbers = [1, 2, 3];</code>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #333;">List</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #333;">
+                      <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer;" onclick="copyToClipboard('cup numbers = [1, 2, 3];')">Copy</button>
+                    </td>
+                  </tr>
+                  <!-- Boolean -->
+                  <tr>
+                    <td style="padding: 10px; background-color: #e9e3e3; border: 1px solid #333;">
+                      <code style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60;">cup isActive = true;</code>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #333;">Boolean</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #333;">
+                      <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer;"
+                        onclick="copyToClipboard('cup isActive = true;')">Copy</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 10px; background-color: #e9e3e3; border: 1px solid #333;">
+                      <code style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60;">cup isComplete = false;</code>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #333;">Boolean</td>
+                    <td style="padding: 10px; text-align: center; border: 1px solid #333;">
+                      <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer;"
+                        onclick="copyToClipboard('cup isComplete = false;')">Copy</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table> <br><br>
+            
+            <h2 class="section-title" id="ChaiScript-Number">ChaiScript Numbers</h2>
+            <p>There are two numeric types in ChaiScript:</p>
+            <ul>
+                <li><pre><code style="color: red;">int</code></pre></li>
+                <li><pre><code style="color: red;">float</code></pre></li>
+            </ul>
+
+            <p>Variables of Number types are created when you assign a value to them:</p>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 400px;">
+                <code style="background: none;">cup x = 42; &nbsp; &nbsp; #int <br> cup y = 3.14; &nbsp;&nbsp;#float</code>
+
+            </div>
+            
+            <h2 style="color: #8F00FF;">Int</h2>
+            <p>Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.</p>
+
+            <p>Integers: </p>
+
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 400px;">
+                <code style="background: none;">
+                    cup x = 1; <br>
+                    cup y = 35656222554887711; <br>
+                    cup z = -3255522; <br> <br>
+                    
+                    serveChai(type(x)) <br>
+                    serveChai(type(y)) <br>
+                    serveChai(type(z))
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick="copyToClipboard(
+                    `cup x = 1; \ncup y = 35656222554887711; \ncup z = -3255522; \n\nserveChai(type(x)) \nserveChai(type(y)) \nserveChai(type(z))`)">
+                    
+                    Copy
+                
+                </button>
+            </div>
+
+            <h2 style="color: #8F00FF;">Float</h2>
+            <p>Float, or "floating point number" is a number, positive or negative, containing one or more decimals.</p>
+
+            <p>Floats: </p>
+
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 400px;">
+                <code style="background: none;">
+                    cup x = 1.10 <br>
+                    cup y = 1.0 <br>
+                    cup z = -35.59 <br> <br>
+
+                    serveChai(type(x)) <br>
+                    serveChai(type(y)) <br>
+                    serveChai(type(z))
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick="copyToClipboard(
+                    `cup x = 1.10\ncup y = 1.0\ncup z = -35.59\n\nserveChai(type(x))\nserveChai(type(y))\nserveChai(type(z))`
+                    )">
+                    
+                    Copy
+                
+                </button>
+            </div>
+
+            <h2 class="section-title" id="ChaiScript-Strings">Strings</h2>
+            <p>Strings in ChaiScript are surrounded by double quotation marks.</p>
+            <p style="display: inline;">You can display a string literal with the <pre style="display: inline;"><code style="color: red;display: inline;">serveChai()</code></pre> <p style="display: inline;">function:</p></p>
+
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 400px;">
+                <code style="background: none;">
+                    serveChai("Hello"); <br>
+                    serveChai("World!");
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 132px;"
+                        onclick='copyToClipboard(`serveChai("Hello");\nserveChai("World!");`)'>
+                    
+                    Copy
+                
+                </button>
+            </div>
+
+            <h2>Assign String to a variable: </h2>
+            <p>Assigning a string to a variable is done with the variable name followed by an equal sign and the string:</p>
+
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 400px;">
+                <code style="background: none;">
+                    cup a = "Kirti"; <br>
+                    serveChai(a);
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 200px;"
+                        onclick='copyToClipboard(`cup a = "Kirti";\nserveChai(a);`)'>
+                    
+                    Copy
+                
+                </button>
+            </div>            
+
+            <h2>Multiline Strings: </h2>
+            <p>You can assign a multiline string to a by simply using double quotation marks:</p>
+
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 400px;">
+                <code style="background: none;">
+                    cup a = "Lorem ipsum dolor sit amet,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consectetur adipiscing elit,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sed do eiusmod tempor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;incididunt
+                    ut labore et dolore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;magna aliqua."<br><br>
+                    serveChai(a);
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 200px;"
+                        onclick='copyToClipboard(`cup a = "Lorem ipsum dolor sit amet,consectetur adipiscing elit,sed do eiusmod temporut labore et dolore magna aliqua."\n\nserveChai(a);`)'>
+                    
+                    Copy
+                
+                </button>
+            </div>              
+
+            <h2>Strings are Arrays</h2>
+            <p>Like many other popular programming languages, strings in ChaiScript are arrays of bytes representing unicode characters.</p>
+            <p>However, ChaiScript does not have a character data type, a single character is simply a string with a length of 1.</p>
+
+            <h2>Length of a String: </h2>
+            <p style="display: inline;">To get the length of a string, use the <pre style="display: inline;"><code style="display: inline;color:red;">str_len()</code></pre></p> <p style="display: inline;"> or</p> <pre style="display: inline;"><code style="display: inline; color:red;">len()</code></pre> <p style="display: inline;"> Function</p> <br><br><br>
+
+            <p style="display: inline;">1. <pre style="display: inline;"><code style="color:red;">str_len()</code></pre></p>
+            <p>This function is exclusively made for returning only string datatype length</p>
+
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 400px;">
+                <code style="background: none;">
+                    cup a = "Kirti is a good girl";
+                    serveChai(str_len(a));
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 115px;"
+                        onclick='copyToClipboard(`cup a = "Kirti is a good girl";\nserveChai(str_len(a));`)'>
+                    
+                    Copy
+                
+                </button>
+            </div>  <br><br>
+
+            <p style="display: inline;">2. <pre style="display: inline;"><code style="color:red;">len()</code></pre></p>
+            <p>This function returns length of any iterative data-type</p>
+
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 400px;">
+                <code style="background: none;">
+                    cup a = "Kirti looks pretty today";
+                    serveChai(len(a));
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 150px;"
+                        onclick='copyToClipboard(`cup a = "Kirti looks pretty today";\nserveChai(len(a));`)'>
+                    
+                    Copy
+                
+                </button>
+            </div> 
+
+            <h2 class="section-title" id="control-structures">Control Structures</h2>
+            <p>Learn about conditionals and loops...</p>
+        
+            <h2 class="section-title" id="functions">Functions</h2>
+            <p>Learn how to create and use functions in ChaiScript...</p>
+        
+            <h2 class="section-title" id="data-handling">Data Handling</h2>
+            <p>Handling data structures like lists and dictionaries...</p>
+        
+            <h2 class="section-title" id="error-handling">Error Handling</h2>
+            <p>Using try-catch blocks to handle errors...</p>
+        
+            <h2 class="section-title" id="advanced">Advanced Topics</h2>
+            <p>Dive into advanced ChaiScript features...</p>
+        
+            <h2 class="section-title" id="examples">Examples & Projects</h2>
+            <p>Explore practical examples and small projects to enhance your skills...</p>
+        </main>
+    </div>
+
+    <footer>
+        <p>Publisher and author: <a href="https://www.instagram.com/zix5an/" target="_blank">Zishan</a></p>
+        <p>&copy; 2024 ChaiScript | <a href="#docs">Documentation</a> | <a href="mailto:zishan.s@somaiya.edu" target="_blank">Contact Us</a></p>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false
+        });
+        window.onload = function() {
+            AOS.refresh();
+        };
+        document.querySelectorAll('.sidebar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const copyCode1 = () => {
+            const button_text = document.getElementById("btn1")
+            
+            const codeText = `cup a = 12;`;
+            navigator.clipboard.writeText(codeText).then(() => {
+                console.log("Code copied to clipboard!");
+            }, () => {
+                console.log("Failed to copy code.");
+            });
+            button_text.textContent = "Copied!"
+            setTimeout(()=>{
+                button_text.textContent = "Copy To Clipboard!"
+            }, 10000)
+        }
+
+        const copyCode2 = () => {
+            const button_text = document.getElementById("btn2")
+            
+            const codeText = `cup x = 4;\t# x is of type int\ncup x = "Kirti";\t# x is now of type str\nserveChai(x);`;
+            navigator.clipboard.writeText(codeText).then(() => {
+                console.log("Code copied to clipboard!");
+            }, () => {
+                console.log("Failed to copy code.");
+            });
+            button_text.textContent = "Copied!"
+            setTimeout(()=>{
+                button_text.textContent = "Copy"
+            }, 10000)
+        }
+
+        const copyCode3 = () => {
+            const button_text = document.getElementById("btn3")
+            
+            const codeText = `cup x = str(3);\t# x will be '3'\ncup y = int(3);\t# y will be 3\ncup z = float(3);\t# z will be 3.0`;
+            navigator.clipboard.writeText(codeText).then(() => {
+                console.log("Code copied to clipboard!");
+            }, () => {
+                console.log("Failed to copy code.");
+            });
+            button_text.textContent = "Copied!"
+            setTimeout(()=>{
+                button_text.textContent = "Copy"
+            }, 10000)
+        }
+
+        const copyCode4 = () => {
+            const button_text = document.getElementById("btn4")
+            
+            const codeText = `cup x = 5;\ncup y = "John";\nserveChai(type_chai(x))\t# "number"\nserveChai(type_chai(y))\t# "string"`;
+            navigator.clipboard.writeText(codeText).then(() => {
+                console.log("Code copied to clipboard!");
+            }, () => {
+                console.log("Failed to copy code.");
+            });
+            button_text.textContent = "Copied!"
+            setTimeout(()=>{
+                button_text.textContent = "Copy"
+            }, 10000)
+        }
+
+        const copyCode5 = () => {
+            const button_text = document.getElementById("btn5")
+            
+            const codeText = `cup x = 5\ncup X = "Kirti"\n# X will not rewrite x`;
+            navigator.clipboard.writeText(codeText).then(() => {
+                console.log("Code copied to clipboard!");
+            }, () => {
+                console.log("Failed to copy code.");
+            });
+            button_text.textContent = "Copied!"
+            setTimeout(()=>{
+                button_text.textContent = "Copy"
+            }, 10000)
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+              alert('Copied to clipboard: ' + text);
+            }).catch(err => {
+              alert('Failed to copy text: ' + err);
+            });
+          }
+    </script>
+</body>
+</html>
+

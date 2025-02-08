@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/ChaiScript.ico">
+    <title>ChaiScript - Downloads</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #333, #27ae60);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease-in;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn:hover {
+            background-color: #15ff00;
+            border-radius: 5px;
+            transform: translateY(-2px);
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+        }
+        .content h1 {
+            color: #27ae60;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .steps {
+            margin-top: 20px;
+        }
+        .step {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        .step h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-top: 0;
+        }
+        .step p, .step li {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        .step-number {
+            background-color: #27ae60;
+            color: #fff;
+            font-size: 1.1em;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: -15px;
+            top: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .step-image {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #27ae60;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        code {
+            font-weight: 400;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.95em;
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        li{
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        AOS.init({
+            duration: 500,
+            easing: 'ease-in-out',
+            once: false
+        });
+        // Initialize AOS after the DOM has been fully loaded
+        window.onload = function() {
+            AOS.refresh();
+        };
+
+          
+    </script>
+    <header>
+        <a href="#" class="logo">
+            <img src="img/ChaiScript.png" alt="ChaiScript Logo">
+            ChaiScript
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="docs.html">Docs</a>
+            <a href="about.html">About</a>
+            <a href="download.html" class="btn">Downloads</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <p>
+            <strong>ChaiScript</strong> is an interpreted language best suited for learning coding and compatible with every OS.
+            Just like Python, you can run ChaiScript in both interactive and script modes.
+        </p>
+
+        <h1>How to Download ChaiScript</h1>
+
+        <div class="steps" data-aos="fade-up" data-aos-once="false">
+            <div class="step">
+                <h3 data-aos="fade-up" data-aos-once="false">Step 1:</h3>
+                <p data-aos="fade-up" data-aos-once="false">Click the download button below to download the zip folder for the ChaiScript Interpreter.</p>
+                <a href="https://drive.google.com/uc?export=download&id=13BKOA-Y9YtFsOW5lTPOhBrMCHHPLIzO5" class="btn" data-aos="fade-up" data-aos-once="false">Download ChaiScript Interpreter</a>
+                <img src="img/download_zip.png" alt="Download in Chrome" class="step-image" data-aos="fade-up">
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-once="false">
+                <h3 data-aos="fade-up" data-aos-once="false">Step 2:</h3>
+                <li data-aos="fade-up" data-aos-once="false">Locate the Downloaded zip folder of ChaiScript Interpreter</li>
+                <img src="img/unzipped_1.png" alt="Unzipping the file" class="step-image" data-aos="fade-up">
+                <li data-aos="fade-up" data-aos-once="false">Double Click and look for unzip/ Extract All option and click on it to Extract</li>
+                <img src="img/unzipped_2.png" alt="Unzipping the file" class="step-image" data-aos="fade-up">
+                <li data-aos="fade-up" data-aos-once="false">Now Choose your Favourable destination for Extracting the Folder</li>
+                <img src="img/unzipped_3.png" alt="Unzipping the file" class="step-image" data-aos="fade-up">
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-once="false">
+                <h3 data-aos="fade-up" data-aos-once="false">Step 3:</h3>
+                <li data-aos="fade-up" data-aos-once="false">
+                    Double Click on the Extracted Folder and look for the <i><b>ChaiScript Terminal.exe</b></i>  with ChaiScript logo and double click on it to code.This will be the interface after extracting the folder:
+                    <!-- Run the <strong>ChaiScript Terminal</strong> to code directly in the command line or to use the Interactive mode.<br>
+                    Alternatively, create a <code>.chai</code> extension file in the ChaiScript Interpreter folder and open the ChaiScript Terminal.
+                    Type <code>run("fileName")</code> to execute the script. -->
+                </li>
+                <img src="img/open1.png" alt="Basic coding in ChaiScript" class="step-image" data-aos="fade-up">
+                <li data-aos="fade-up" data-aos-once="false">After clicking twice on <i><b>ChaiScript Terminal </b></i> You will see a window where a window will pop up and will inform u that the following application is unrecognisable by the OS and do you want to run it or not.</li>
+                <li data-aos="fade-up" data-aos-once="false">Just press the <i>more info</i> dropdown and select run anyway button</li>
+                <img src="img/open2.png" alt="Basic coding in ChaiScript" class="step-image" data-aos="fade-up">
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-once="false">
+                <h3 data-aos="fade-up" data-aos-once="false">Step 4:</h3>
+                <li data-aos="fade-up" data-aos-once="false">Congratulations Your Interpreter is ready to use and execute code</li>
+                <li data-aos="fade-up" data-aos-once="false">
+                    Open the <strong><i>ChaiScript Terminal</i></strong> to code directly in the command line or to use the Interactive mode.<br>
+                    Alternatively, create a <code>.chai</code> extension file in the ChaiScript Interpreter folder and open the ChaiScript Terminal.
+                    Type <code>run("fileName")</code> to execute the script.
+                </li>
+                <img src="img/code1.png" alt="Basic coding in ChaiScript" class="step-image" data-aos="fade-up">
+                <li data-aos="fade-up" data-aos-once="false">Feel free to experiment the language. <b>Happy Coding with ChaiScript!!</b></li>
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-once="false">
+                <h3 data-aos="fade-up" data-aos-once="false">Step 5 (Optional):</h3>
+                <li data-aos="fade-up" data-aos-once="false">
+                    Download the VS Code extension for ChaiScript directly from the VS Code Marketplace by searching 
+                    <strong>ChaiScript - By Zishan</strong>, or use the button below.
+                </li>
+                <li data-aos="fade-up" data-aos-once="false">
+                    The extension helps in syntax highlighting of ChaiScript language also provides auto-completion for the ChaiScript language
+                </li>
+                <li data-aos="fade-up" data-aos-once="false">
+                    This is not necessary to download but it saves a lot of time for coding in script mode
+                </li>
+                <a href="https://marketplace.visualstudio.com/items?itemName=Zishan1212.chaiscript" class="btn" target="_blank">Download VS Code Extension</a>
+                <img src="img/vs1.png" alt="ChaiScript extension in VS Code" class="step-image" data-aos="fade-up" data-aos-once="false">
+                <img src="img/vs2.png" alt="okokoko" class="step-image" data-aos="fade-up" data-aos-once="false">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Publisher and author of the website and language: <a href="https://www.instagram.com/zix5an/" target="_blank">Zishan</a> </p>
+        <p>&copy; 2024 ChaiScript | <a href="#docs">Documentation</a> | <a href="mailto:zishan.s@somaiya.edu" target="_blank">Contact Us</a></p>
+    </footer>
+</body>
+</html>
