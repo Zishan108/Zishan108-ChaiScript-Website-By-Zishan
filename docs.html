@@ -214,6 +214,16 @@
         #note-alert2 p{
             margin-left: 10px;
         }
+        .note-alert{
+            display: flex;
+            align-items: start;
+            border-radius: 7px;
+            background-color: #f1e67d;
+            height: 6rem;
+        }
+        .note-alert p{
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -800,10 +810,169 @@
                 
                 </p>
             </div>
+            <br>
 
+            <hr class="subtitle-hr">
 
+            <h2>else if</h2>
+            <p>The <span style="color: red; background-color:#ddd3d3; display:inline-block; width:3.5rem; text-align:center">mild</span> keyword is ChaiScript's way of saying "if the previous conditions were not true, then try this condition". </p>
+
+            <h3>Example:</h3>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 500px;">
+
+                
+
+                <code style="background: none;">
+                    cup a = 12; <br>
+                    cup b = 12; <br><br>
+                    
+                    hot b > a then_chai <br>
+                    &nbsp; &nbsp;serveChai("b is greater than a"); <br>
+
+                    mild b == a then_chai <br>
+                    &nbsp; &nbsp;serveChai("b is equal to a"); <br>
+                    sip<br>
+                    
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 440px;"
+                        onclick='copyToClipboard(`cup a = 12;\ncup b = 12;\n\nhot b > a then_chai\n\tserveChai("b is greater than a");\nmild b == a then_chai\n\tserveChai("b is equal to a");\n
+                    sip\n`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+
+            <p>In this example a is equal to b, so the first condition is not true, but the elif condition is true, so we print to screen that "a and b are equal".</p>
+
+            <div class="note-alert">
+                <p>
+                    <b>Note: </b> Notice how the sip keyword is only written once for both hot and mild. It's because ChaiScript Considers every conditional statement as One Scope revolving around a single condition.
+                
+                </p>
+            </div>
+            <br>
+            <hr class="subtitle-hr">
+
+            <h2>else</h2>
+            <p>The <span style="color: red; background-color:#ddd3d3; display:inline-block; width:3.5rem; text-align:center">chilled</span> keyword catches anything which isn't caught by the preceding conditions.</p>
+
+            <h3>Example:</h3>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 500px;">
+
+                
+
+                <code style="background: none;">
+                    cup a = 12; <br>
+                    cup b = 12; <br>
+
+                    hot a > b then_chai <br>
+                    &nbsp;&nbsp;serveChai("a is greater than b"); <br> <br>
+
+                    mild a < b then_chai <br>
+                    &nbsp;&nbsp;serveChai("a is smaller than b"); <br> <br>
+
+                    chilled <br>
+                    &nbsp;&nbsp;serveChai("a is Equals to b"); <br>
+                    sip;
+
+                    
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 440px;"
+                        onclick='copyToClipboard(`cup a = 12;\ncup b = 12;\nhot a > b then_chai\n\t;serveChai("a is greater than b");\n\nmild a < b then_chai\n\tserveChai("a is smaller than b");\n\nchilled\n\tserveChai("a is Equals to b");\nsip;`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+
+            <hr class="subtitle-hr">
+
+            <h2>And</h2>
+            <p>The <span style="color: red; background-color:#ddd3d3; display:inline-block; width:3.5rem; text-align:center">and</span> keyword is a logical operator, and is used to combine conditional statements:</p>
+            <p>It evaluates true if both the conditions are true else it evaluates it to false</p>
+
+            <h3>Example:</h3>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 600px;">
+
+                
+
+                <code style="background: none;">
+                    cup a = 19;<br><br>
+
+                    hot a > 18 and a < 100 then_chai <br>
+                    &nbsp;&nbsp;serveChai("Valid age! Both Conditions are true");<br>
+                    sip;
+
+                    
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 540px;"
+                        onclick='copyToClipboard(`cup a = 19;\n\nhot a > 18 and a < 100 then_chai\n\tserveChai("Valid age! Both Conditions are true");\nsip;`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+            <hr class="subtitle-hr">
+
+            <h2>Or</h2>
+            <p>The <span style="color: red; background-color:#ddd3d3; display:inline-block; width:3.5rem; text-align:center">or</span> keyword is a logical operator, and is used to combine conditional statements:</p>
+            <p>It evaluates true even if one of the condition is true. It only evaluates to false if both the condition is false.</p>
+
+            <h3>Example:</h3>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 600px;">
+
+                
+
+                <code style="background: none;">
+                    cup a = 19;<br><br>
+
+                    hot a > 18 or a <= 19 then_chai <br>
+                    &nbsp;&nbsp;serveChai("Valid age!");<br>
+                    sip;
+
+                    
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 540px;"
+                        onclick='copyToClipboard(`cup a = 19;\n\nhot a > 18 or a >=19 then_chai\n\tserveChai("Valid age!");\nsip;`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+            <hr class="subtitle-hr">
+
+            <h2>Not</h2>
+            <p>The <span style="color: red; background-color:#ddd3d3; display:inline-block; width:3.5rem; text-align:center">not</span> keyword is a logical operator, and is used to reverse the result of the conditional statement:</p>
+
+            <h3>Example:</h3>
+            <div style="background-color: #ffffff; color: #27ae60; padding: 5px; border-left: 4px solid #27ae60; max-width: 600px;">
+
+                
+
+                <code style="background: none;">
+                    cup a = 19;<br><br>
+
+                    hot not a < 18 then_chai <br>
+                    &nbsp;&nbsp;serveChai("Valid age!");<br>
+                    sip;
+
+                    
+                </code>
+                <button style="background-color: #27ae60; color: #fff; border: none; padding: 5px 10px; cursor: pointer; margin-left: 540px;"
+                        onclick='copyToClipboard(`cup a = 19;\n\nhot not a < 18 then_chai\n\tserveChai("Valid age!");\nsip;`)'>
+                    
+                    Copy
+                
+                </button>
+
+            </div> <br>
+            <hr class="title-hr">
             
-        
             <h2 class="section-title" id="functions">Functions</h2>
             <p>Learn how to create and use functions in ChaiScript...</p>
         
