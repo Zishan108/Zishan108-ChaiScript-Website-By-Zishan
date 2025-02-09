@@ -1,1 +1,5 @@
-helllooo
+cup a = 12;
+cup b = 1212;
+hot b > a then_chai 
+	serveChai("b is greater than a")
+sip
