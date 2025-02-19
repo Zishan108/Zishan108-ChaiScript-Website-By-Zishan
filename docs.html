@@ -973,8 +973,59 @@
             </div> <br>
             <hr class="title-hr">
             
-            <h2 class="section-title" id="functions">Functions</h2>
-            <p>Learn how to create and use functions in ChaiScript...</p>
+            <!-- Add this in the main-content section where the Functions placeholder was -->
+        <h2 class="section-title" id="functions">Functions</h2>
+        <p>Functions in ChaiScript are defined using the <code>brew</code> keyword. They allow you to encapsulate reusable blocks of code.</p>
+
+        <h3>Function Declaration</h3>
+        <p>Basic function syntax with a code block:</p>
+        <div class="doc-container">
+            <div class="docs" style="height: 3.5rem;">
+                <p>brew greet(name) <br>
+                &nbsp;&nbsp;serveChai("Hello " + name) <br>
+                sip</p> <br> 
+            </div> 
+        </div><br>
+        <button class="btn" onclick='copyToClipboard(`brew greet(name)\n\tserveChai(\"Hello \" + name)\nsip`)'>Copy</button>
+
+        <h3>One-line Function</h3>
+        <p>For simple functions, you can use arrow syntax:</p>
+        <div class="doc-container">
+            <div class="docs">
+                <p>brew square(x) -> x * x</p> <br>
+            </div>
+        </div><br>
+        <button class="btn" onclick="copyToClipboard('brew square(x) -> x * x')">Copy</button>
+
+        <h3>Calling Functions</h3>
+        <p>Functions are called using parentheses:</p>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup result = square(5) <br>
+                serveChai(result)  # Output: 25</p> <br>
+            </div>
+        </div><br>
+        <button class="btn" onclick="copyToClipboard('cup result = square(5)\nserveChai(result)')">Copy</button>
+
+        <h3>Parameters</h3>
+        <p>Functions can accept multiple parameters:</p>
+        <div class="doc-container">
+            <div class="docs" style="height: 3.5rem;">
+                <p>brew add(a, b) <br>
+                &nbsp;&nbsp;serveChai(a + b) <br>
+                sip</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick="copyToClipboard('brew add(a, b)\n\tserveChai(a + b)\nsip')">Copy</button> <br>
+
+        <div class="note-alert">
+            <p>
+                <b>Note:</b> The <code>sip</code> keyword is only required for multi-line function blocks. 
+                One-line functions using arrow syntax don't need <code>sip</code>.
+            </p>
+        </div>
+
+        <hr class="title-hr">
         
             <h2 class="section-title" id="data-handling">Data Handling</h2>
             <p>Handling data structures like lists and dictionaries...</p>
