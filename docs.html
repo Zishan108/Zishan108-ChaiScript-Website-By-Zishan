@@ -257,6 +257,7 @@
             <a href="#built-in_functions">Built-In Functions</a>
             <a href="#for-loop">For Loop</a>
             <a href="#while-loop">While Loop</a>
+            <a href="#break-continue">Break And Continue</a>
         </aside>
 
         <main class="main-content">
@@ -1112,6 +1113,29 @@
             </p>
         </div>
 
+        <hr class="subtitle-hr">
+
+        <h3>Return Statement</h3>
+        <p>The <code>return_chai</code> keyword is used to return a value from a function. When a function reaches a <code>return_chai</code> statement, it will stop executing and return the specified value.</p>
+
+        <h3>Example:</h3>
+        <p>This example demonstrates a function that returns the sum of two numbers:</p>
+        <div class="doc-container">
+            <div class="docs" style="height: 4rem;">
+                <p>brew add(a, b) <br>
+                &nbsp;&nbsp;return_chai a + b <br>
+                sip</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`brew add(a, b)\n\treturn_chai a + b\nsip`)'>Copy</button>
+        <p>Calling the function:</p>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup result = add(3, 4) <br>
+                serveChai(result)  # Output: 7</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup result = add(3, 4)\nserveChai(result)`)'>Copy</button>
         <hr class="title-hr">
         
         <h2 class="section-title" id="built-in_functions">Built-in Functions</h2>
@@ -1878,6 +1902,51 @@
             <div class="doc-container" style="height: 7rem;">
                 <div class="docs" style="height: 6rem;">
                     <p>1<br>2<br>3<br>4<br>5</p>
+                </div>
+            </div>
+            <hr class="subtitle-hr">
+
+            <h2 class="section-title" id="break-continue">Break and Continue</h2>
+            <p>The <code>break_chai</code> keyword is used to exit a loop prematurely, and the <code>continue_chai</code> keyword is used to skip the current iteration and continue with the next iteration of the loop.</p>
+
+            <h3>Break Example:</h3>
+            <p>This example demonstrates a for loop that exits when the variable <code>i</code> equals 3:</p>
+            <div class="doc-container" style="height: 8rem;">
+                <div class="docs" style="height: 7rem;">
+                    <p>for_chai i = 0 to_chai 5 then_chai <br>
+                    &nbsp;&nbsp;hot i == 3 then_chai <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;break_chai <br>
+                    &nbsp;&nbsp;sip <br>
+                    &nbsp;&nbsp;serveChai(i) <br>
+                    sip</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`for_chai i = 0 to_chai 5 then_chai\n\thot i == 3 then_chai\n\t\tbreak_chai\n\tsip\n\tserveChai(i)\nsip`)'>Copy</button>
+            <p>Output:</p>
+            <div class="doc-container" style="height: 7rem;">
+                <div class="docs" style="height: 6rem;">
+                    <p>0<br>1<br>2</p>
+                </div>
+            </div>
+            <hr class="subtitle-hr">
+
+            <h3>Continue Example:</h3>
+            <p>This example demonstrates a for loop that skips the iteration when the variable <code>i</code> equals 3:</p>
+            <div class="doc-container" style="height: 8rem;">
+                <div class="docs" style="height: 7rem;">
+                    <p>for_chai i = 0 to_chai 5 then_chai <br>
+                    &nbsp;&nbsp;hot i == 3 then_chai <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;continue_chai <br>
+                    &nbsp;&nbsp;sip <br>
+                    &nbsp;&nbsp;serveChai(i) <br>
+                    sip</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`for_chai i = 0 to_chai 5 then_chai\n\thot i == 3 then_chai\n\t\tcontinue_chai\n\tsip\n\tserveChai(i)\nsip`)'>Copy</button>
+            <p>Output:</p>
+            <div class="doc-container" style="height: 7rem;">
+                <div class="docs" style="height: 6rem;">
+                    <p>0<br>1<br>2<br>4</p>
                 </div>
             </div>
             <hr class="subtitle-hr">
