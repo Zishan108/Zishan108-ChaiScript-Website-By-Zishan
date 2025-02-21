@@ -1,3 +1,0 @@
-cup a = "Lorem ipsum dolor sit amet,consectetur adipiscing elit,sed do eiusmod temporut labore et dolore magna aliqua."
-
-serveChai(a);

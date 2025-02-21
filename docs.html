@@ -235,7 +235,6 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="docs.html">Docs</a>
-            <a href="about.html">About</a>
             <a href="download.html" class="btn">Downloads</a>
         </nav>
     </header>
@@ -252,12 +251,12 @@
             <a href="#ChaiScript-Strings">Strings</a>
             <a href="#ChaiScript-List">List</a>
             <a href="#ChaiScript-Booleans">Booleans</a>
+            <a href="#Operators">Operators</a>
             <a href="#ChaiScript-if_else">ChaiScript if..else</a>
             <a href="#functions">Functions</a>
-            <a href="#data-handling">Data Handling</a>
-            <a href="#error-handling">Error Handling</a>
-            <a href="#advanced">Advanced Topics</a>
-            <a href="#examples">Examples & Projects</a>
+            <a href="#built-in_functions">Built-In Functions</a>
+            <a href="#for-loop">For Loop</a>
+            <a href="#while-loop">While Loop</a>
         </aside>
 
         <main class="main-content">
@@ -757,6 +756,94 @@
                 </button>
 
             </div> <br>
+            <hr class="title-hr">
+
+            <h2 class="section-title" id="Operators">Operators</h2>
+            <p>Operators are used to perform operations on variables and values.</p>
+
+            <h3>1. <b style="color: red;">+</b></h3>
+            <p>This adds the two Numbers and gives the sum of them.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai(1 + 2)  # Output: 3</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai(1 + 2)`)'>Copy</button>
+            <p>Concatenates two strings or can also concatenate one Number and a string by typecasting the Number into string and then Concatenating it.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai("zishan" + " op")  # Output: "zishan op"</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai("zishan" + " op")`)'>Copy</button>
+            <p>Appends a value in the list.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai([1, 2, 3] + 4)  # Output: [1, 2, 3, 4]</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai([1, 2, 3] + 4)`)'>Copy</button>
+            <hr class="subtitle-hr">
+
+            <h3>2. <b style="color: red;">-</b></h3>
+            <p>This is used for subtraction.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai(5 - 3)  # Output: 2</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai(5 - 3)`)'>Copy</button>
+            <p>This is also used for popping out the element given index in the right hand side of the operator of a list.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai([1, 2, 3, 4] - 3)  # Output: [1, 2, 3]</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai([1, 2, 3, 4] - 3)`)'>Copy</button>
+            <hr class="subtitle-hr">
+
+            <h3>3. <b style="color: red;">*</b></h3>
+            <p>Acts as Multiplication Operator.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai(3 * 4)  # Output: 12</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai(3 * 4)`)'>Copy</button>
+            <p>Merges two lists.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai([1, 2, 3] * [4, 5, 6])  # Output: [1, 2, 3, 4, 5, 6]</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai([1, 2, 3] * [4, 5, 6])`)'>Copy</button>
+            <hr class="subtitle-hr">
+
+            <h3>4. <b style="color: red;">/</b></h3>
+            <p>Acts as Division Operator.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai(10 / 2)  # Output: 5</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai(10 / 2)`)'>Copy</button>
+            <p>Returns the element at the value entered at the right hand side of the operator in the list.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai([1, 2, 3, 4] / 3)  # Output: 4</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai([1, 2, 3, 4] / 3)`)'>Copy</button>
+            <hr class="subtitle-hr">
+
+            <h3>5. <b style="color: red;">^</b></h3>
+            <p>Returns the powered value of the left operand to the right.</p>
+            <div class="doc-container">
+                <div class="docs">
+                    <p>serveChai(9 ^ 2)  # Output: 81</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`serveChai(9 ^ 2)`)'>Copy</button>
             <hr class="title-hr">
 
             <h2 class="section-title" id="ChaiScript-if_else">ChaiScript Conditions and If statements</h2>
@@ -1702,19 +1789,103 @@
         <button class="btn" onclick='copyToClipboard(`serveChai(Math_arccoth(1))`)'>Copy</button>
         <hr class="subtitle-hr">
         
-            <h2 class="section-title" id="error-handling">Error Handling</h2>
-            <p>Using try-catch blocks to handle errors...</p>
+            
         
-            <h2 class="section-title" id="advanced">Advanced Topics</h2>
-            <p>Dive into advanced ChaiScript features...</p>
-        
-            <h2 class="section-title" id="examples">Examples & Projects</h2>
-            <p>Explore practical examples and small projects to enhance your skills...</p>
+            <h2 class="section-title" id="for-loop">For Loop</h2>
+            <p>For loop is used when you want to iterate a particular code for a specific number of times.</p>
+            <p>The keyword for the for loop in ChaiScript is <code>for_chai</code>.</p>
+
+            <h3>Syntax:</h3>
+            <div class="doc-container">
+                <div class="docs" style="height: 4rem;">
+                    <p>for_chai i = start to_chai end then_chai <br>
+                    &nbsp;&nbsp;# code block <br>
+                    sip</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`for_chai i = start to_chai end then_chai\n\t# code block\nsip`)'>Copy</button>
+            <hr class="subtitle-hr">
+
+            <h3>Example:</h3>
+            <p>This example demonstrates a for loop that iterates from 0 to 6 and prints each value:</p>
+            <div class="doc-container">
+                <div class="docs" style="height: 4rem;">
+                    <p>for_chai i = 0 to_chai 7 then_chai <br>
+                    &nbsp;&nbsp;serveChai(i) <br>
+                    sip</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`for_chai i = 0 to_chai 7 then_chai\n\tserveChai(i)\nsip`)'>Copy</button>
+            <p>Output:</p>
+            <div class="doc-container" style="height: 9rem;">
+                <div class="docs" style="height: 8rem;">
+                    <p>0<br>1<br>2<br>3<br>4<br>5<br>6</p>
+                </div>
+            </div>
+            <hr class="subtitle-hr">
+
+            <p>The <code>to_chai</code> keyword is used to declare the last iteration number. It is exclusive, meaning the loop runs up to but does not include this number. For example, if <code>to_chai</code> is set to 7, the loop will run from 0 to 6.</p>
+
+            <h3>Using STEP Keyword:</h3>
+            <p>The <code>STEP</code> keyword is used to specify the increment or decrement value for the loop variable. It allows you to control the step size of the loop.</p>
+
+            <h3>Example:</h3>
+            <p>This example demonstrates a for loop that iterates from 5 to 1 in steps of -1 and prints each value:</p>
+            <div class="doc-container">
+                <div class="docs" style="height: 4rem;">
+                    <p>for_chai i = 5 to_chai 0 STEP -1 then_chai <br>
+                    &nbsp;&nbsp;serveChai(i) <br>
+                    sip</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`for_chai i = 5 to_chai 0 STEP -1 then_chai\n\tserveChai(i)\nsip`)'>Copy</button>
+            <p>Output:</p>
+            <div class="doc-container" style="height: 7rem;">
+                <div class="docs" style="height: 6rem;">
+                    <p>5<br>4<br>3<br>2<br>1</p>
+                </div>
+            </div>
+            <hr class="subtitle-hr">
+
+            <h2 class="section-title" id="while-loop">While Loop</h2>
+            <p>The while loop is used to execute a block of code as long as a specified condition is true.</p>
+            <p>The keyword for the while loop in ChaiScript is <code>while_chai</code>.</p>
+
+            <h3>Syntax:</h3>
+            <div class="doc-container">
+                <div class="docs" style="height: 4rem;">
+                    <p>while_chai condition then_chai <br>
+                    &nbsp;&nbsp;# code block <br>
+                    sip</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`while_chai condition then_chai\n\t# code block\nsip`)'>Copy</button>
+            <hr class="subtitle-hr">
+
+            <h3>Example:</h3>
+            <p>This example demonstrates a while loop that iterates as long as the variable <code>a</code> is less than or equal to 5 and prints each value:</p>
+            <div class="doc-container" style="height: 8rem;">
+                <div class="docs" style="height: 7rem;">
+                    <p>cup a = 1; <br><br>
+                    while_chai a <= 5 then_chai <br>
+                    &nbsp;&nbsp;serveChai(a); <br>
+                    &nbsp;&nbsp;cup a = a + 1; <br>
+                    sip</p>
+                </div>
+            </div>
+            <button class="btn" onclick='copyToClipboard(`cup a = 1;\n\nwhile_chai a <= 5 then_chai\n\tserveChai(a);\n\tcup a = a + 1;\nsip`)'>Copy</button>
+            <p>Output:</p>
+            <div class="doc-container" style="height: 7rem;">
+                <div class="docs" style="height: 6rem;">
+                    <p>1<br>2<br>3<br>4<br>5</p>
+                </div>
+            </div>
+            <hr class="subtitle-hr">
         </main>
     </div>
 
     <footer>
-        <p>Publisher and author: <a href="https://www.instagram.com/zix5an/" target="_blank">Zishan</a></p>
+        <p>Publisher and author: <a href="https://github.com/Zishan108" target="_blank">Zishan</a></p>
         <p>&copy; 2024 ChaiScript | <a href="#docs">Documentation</a> | <a href="mailto:zishan.s@somaiya.edu" target="_blank">Contact Us</a></p>
     </footer>
 
