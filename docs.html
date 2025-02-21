@@ -1027,8 +1027,680 @@
 
         <hr class="title-hr">
         
-            <h2 class="section-title" id="data-handling">Data Handling</h2>
-            <p>Handling data structures like lists and dictionaries...</p>
+        <h2 class="section-title" id="built-in_functions">Built-in Functions</h2>
+        <p>This section covers the built-in functions available in ChaiScript, categorized by their functionality. Each function includes a description and example usage.</p>
+        
+        <h3>Utility Functions</h3>
+        <p>These functions handle basic input/output, type conversion, and program flow control.</p>
+        
+        <h4>1. <b style="color: red;">serveChai(arg)</b> - Prints the argument to the screen.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai("Hello, Chai!")  # Output: Hello, Chai!</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick='copyToClipboard(`serveChai("Hello, Chai!")`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>2. <b style="color: red;">serve_ret(arg)</b> - Prints and returns the argument.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup x = serve_ret("Hi")  # Prints: Hi, Assigns "Hi" to x</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick='copyToClipboard(`cup x = serve_ret("Hi")`)'>Copy</button> 
+        <hr class="subtitle-hr">
+        
+        <h4>3. <b style="color: red;">orderChai(arg)</b> - Prints the argument as a prompt and takes user input (returns string).</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup name = orderChai("Enter name: ")  # Prompts user, assigns input to name</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick='copyToClipboard(`cup name = orderChai("Enter name: ")`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>4. <b style="color: red;">orderChai_int(string)</b> - Prompts with the string and takes numeric input (returns integer).</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup age = orderChai_int("Enter age: ")  # Prompts user, assigns integer to age</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick='copyToClipboard(`cup age = orderChai_int("Enter age: ")`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>5. <b style="color: red;">clean() / cls()</b> - Clears the ChaiScript terminal.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>clean();  # Clears the terminal <br> cls(); #also clears the terminal</p>
+            </div>
+        </div><br>
+        <button class="btn" onclick='copyToClipboard(`clean();\ncls();`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>6. <b style="color: red;">type_chai(arg)</b> - Returns the type of the argument.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(type_chai(42))  # Output: Number</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick='copyToClipboard(`serveChai(type_chai(42))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>7. <b style="color: red;">current_date_time()</b> - Returns the current date and time.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(current_date_time())  # Output: e.g., "2025-02-21 10:00:00"</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick='copyToClipboard(`serveChai(current_date_time())`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>8. <b style="color: red;">list_len(list)</b> - Returns the length of a list.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup lst = [1, 2, 3]; serveChai(list_len(lst))  # Output: 3</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick='copyToClipboard(`cup lst = [1, 2, 3]; serveChai(list_len(lst))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>9. <b style="color: red;">str_len(string)</b> - Returns the length of a string.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(str_len("Chai"))  # Output: 4</p>
+            </div>
+        </div><br>
+        <button class="btn" onclick='copyToClipboard(`serveChai(str_len("Chai"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>10. <b style="color: red;">len(arg)</b> - Returns the length of any datatype.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(len("Tea"))  # Output: 3</p>
+            </div>
+        </div> <br>
+        <button class="btn" onclick='copyToClipboard(`serveChai(len("Tea"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>11. <b style="color: red;">int(arg)</b> - Converts the argument to an integer.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup num = int("123"); serveChai(num)  # Output: 123</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup num = int("123"); serveChai(num)`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>12. <b style="color: red;">str(arg)</b> - Converts the argument to a string.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(str(42))  # Output: "42"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(str(42))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>13. <b style="color: red;">float(arg)</b> - Converts the argument to a float.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup f = float("3.14"); serveChai(f)  # Output: 3.14</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup f = float("3.14"); serveChai(f)`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>14. <b style="color: red;">time_freeze(int)</b> - Pauses execution for the specified seconds.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai("Waiting..."); time_freeze(2); serveChai("Done!")  # Waits 2 seconds</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai("Waiting..."); time_freeze(2); serveChai("Done!")`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h3>Boolean Functions</h3>
+        <p>These functions return <code>true</code> or <code>false</code> based on type or emptiness checks.</p>
+        
+        <h4>1. <b style="color: red;">is_chai_num(arg)</b> - Returns true if the argument is a number.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(is_chai_num(42))  # Output: true</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(is_chai_num(42))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>2. <b style="color: red;">is_chai_str(arg)</b> - Returns true if the argument is a string.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(is_chai_str("Chai"))  # Output: true</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(is_chai_str("Chai"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>3. <b style="color: red;">is_chai_list(arg)</b> - Returns true if the argument is a list.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(is_chai_list([1, 2]))  # Output: true</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(is_chai_list([1, 2]))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>4. <b style="color: red;">is_brew(arg)</b> - Returns true if the argument is a function.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>brew my_func() -> 42; serveChai(is_brew(my_func))  # Output: true</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`brew my_func() -> 42; serveChai(is_brew(my_func))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>5. <b style="color: red;">is_empty(arg)</b> - Returns true if the argument is empty.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(is_empty(""))  # Output: true</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(is_empty(""))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h3>String Functions</h3>
+        <p>These functions manipulate or inspect strings.</p>
+        
+        <h4>1. <b style="color: red;">to_lower(string)</b> - Converts string to lowercase.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(to_lower("CHAI"))  # Output: "chai"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(to_lower("CHAI"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>2. <b style="color: red;">to_upper(string)</b> - Converts string to uppercase.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(to_upper("chai"))  # Output: "CHAI"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(to_upper("chai"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>3. <b style="color: red;">char_at(string, index)</b> - Returns character at index.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(char_at("Chai", 1))  # Output: "h"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(char_at("Chai", 1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>4. <b style="color: red;">index_of(string1, string2)</b> - Returns index of string2 in string1.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(index_of("ChaiScript", "Script"))  # Output: 4</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(index_of("ChaiScript", "Script"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>5. <b style="color: red;">slice(string, start, end, step)</b> - Returns a substring.Takes 1st arg as the primary string, 2nd as start index, third as end index and fourth as hops or steps over the indexes.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(slice("ChaiScript", 0, 4, 1))  # Output: "Chai"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(slice("ChaiScript", 0, 4, 1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>6. <b style="color: red;">starts_with(string1, string2)</b> - Checks if string1 starts with string2.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(starts_with("Chai", "Ch"))  # Output: true</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(starts_with("Chai", "Ch"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>7. <b style="color: red;">ends_with(string1, string2)</b> - Checks if string1 ends with string2.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(ends_with("Chai", "ai"))  # Output: true</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(ends_with("Chai", "ai"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>8. <b style="color: red;">trim(string)</b> - Removes trailing spaces.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(trim("  Chai  "))  # Output: "Chai"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(trim("  Chai  "))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>9. <b style="color: red;">replace(string, old, new)</b> - Replaces All occurrences of old substring with new substring.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(replace("Tea Tea", "Tea", "Chai"))  # Output: "Chai Chai"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(replace("Tea Tea", "Tea", "Chai"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>10. <b style="color: red;">split_to_list(string, delimiter)</b> - Splits string into a list with the specified Delimitter.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(split_to_list("a,b,c", ","))  # Output: ["a", "b", "c"]</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(split_to_list("a,b,c", ","))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>11. <b style="color: red;">capitalize(string)</b> - Capitalizes the first letter.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(capitalize("chai"))  # Output: "Chai"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(capitalize("chai"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>12. <b style="color: red;">title(string)</b> - Converts to title case.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(title("chai script"))  # Output: "Chai Script"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(title("chai script"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h3>List Functions</h3>
+        <p>These functions operate on lists.</p>
+        
+        <h4>1. <b style="color: red;">append(list, arg)</b> - Adds an element to the list.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup lst = [1, 2]; append(lst, 3); serveChai(lst)  # Output: [1, 2, 3]</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup lst = [1, 2]; append(lst, 3); serveChai(lst)`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>2. <b style="color: red;">pop(list, index)</b> - Removes and returns the element at index.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup lst = [1, 2, 3]; serveChai(pop(lst, 1))  # Output: 2, lst: [1, 3]</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup lst = [1, 2, 3]; serveChai(pop(lst, 1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>3. <b style="color: red;">extend(list1, list2)</b> - Adds list1 elements to list2.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup lst1 = [1, 2]; cup lst2 = [3, 4]; extend(lst1, lst2); serveChai(lst2)  # Output: [3, 4, 1, 2]</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup lst1 = [1, 2]; cup lst2 = [3, 4]; extend(lst1, lst2); serveChai(lst2)`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>4. <b style="color: red;">sort_list(list)</b> - Returns a sorted list.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup lst = [3, 1, 2]; serveChai(sort_list(lst))  # Output: [1, 2, 3]</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup lst = [3, 1, 2]; serveChai(sort_list(lst))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>5. <b style="color: red;">reverse_list(list)</b> - Returns a reversed list.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup lst = [1, 2, 3]; serveChai(reverse_list(lst))  # Output: [3, 2, 1]</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup lst = [1, 2, 3]; serveChai(reverse_list(lst))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>6. <b style="color: red;">range(start, end, step)</b> - Creates a list of numbers.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(range(1, 5, 1))  # Output: [1, 2, 3, 4]</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(range(1, 5, 1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>7. <b style="color: red;">element_at(list, index)</b> - Returns element at index.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup lst = [1, 2, 3]; serveChai(element_at(lst, 1))  # Output: 2</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup lst = [1, 2, 3]; serveChai(element_at(lst, 1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>8. <b style="color: red;">join_to_str(list, delimiter)</b> - Joins list into a string.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>cup lst = ["a", "b", "c"]; serveChai(join_to_str(lst, "-"))  # Output: "a-b-c"</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`cup lst = ["a", "b", "c"]; serveChai(join_to_str(lst, "-"))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h3>Math Functions</h3>
+        <p>These functions provide mathematical constants and operations.</p>
+        
+        <h4>1. <b style="color: red;">Math_PI</b> - Constant Pi value.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_PI)  # Output: 3.14159...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_PI)`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>2. <b style="color: red;">Math_E</b> - Constant Euler's number.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_E)  # Output: 2.71828...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_E)`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>3. <b style="color: red;">Math_mod_div(x, y)</b> - Returns remainder of x / y.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_mod_div(10, 3))  # Output: 1</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_mod_div(10, 3))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>4. <b style="color: red;">Math_factorial(x)</b> - Returns factorial of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_factorial(5))  # Output: 120</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_factorial(5))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>5. <b style="color: red;">Math_sqrt(x)</b> - Returns square root of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_sqrt(16))  # Output: 4</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_sqrt(16))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>6. <b style="color: red;">Math_floor(x)</b> - Returns floor value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_floor(3.7))  # Output: 3</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_floor(3.7))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>7. <b style="color: red;">Math_ceil(x)</b> - Returns ceiling value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_ceil(3.2))  # Output: 4</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_ceil(3.2))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>8. <b style="color: red;">Math_round(x, decimals)</b> - Rounds x to specified decimals.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_round(3.14159, 2))  # Output: 3.14</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_round(3.14159, 2))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>9. <b style="color: red;">Math_absoluteval(x)</b> - Returns absolute value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_absoluteval(-5))  # Output: 5</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_absoluteval(-5))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>10. <b style="color: red;">Math_random_chai(min, max)</b> - Returns random integer between min and max.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_random_chai(1, 10))  # Output: e.g., 7</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_random_chai(1, 10))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>11. <b style="color: red;">Math_sin(x)</b> - Returns sine of x (radians).</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_sin(Math_PI / 2))  # Output: 1</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_sin(Math_PI / 2))`)'>Copy</button>
+        <hr class="subtitle-hr">
+        
+        <h4>12. <b style="color: red;">Math_cos(x)</b> - Returns cosine of x (radians).</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_cos(0))  # Output: 1</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_cos(0))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>13. <b style="color: red;">Math_tan(x)</b> - Returns tan value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_tan(Math_PI / 4))  # Output: 1</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_tan(Math_PI / 4))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>14. <b style="color: red;">Math_sec(x)</b> - Returns sec value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_sec(0))  # Output: 1</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_sec(0))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>15. <b style="color: red;">Math_cosec(x)</b> - Returns cosec value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_cosec(Math_PI / 2))  # Output: 1</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_cosec(Math_PI / 2))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>16. <b style="color: red;">Math_cot(x)</b> - Returns cot value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_cot(Math_PI / 4))  # Output: 1</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_cot(Math_PI / 4))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>17. <b style="color: red;">Math_arcsin(x)</b> - Returns inverse sin value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arcsin(1))  # Output: 1.5708...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arcsin(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>18. <b style="color: red;">Math_arccos(x)</b> - Returns inverse cos value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arccos(1))  # Output: 0</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arccos(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>19. <b style="color: red;">Math_arctan(x)</b> - Returns inverse tan value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arctan(1))  # Output: 0.7854...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arctan(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>20. <b style="color: red;">Math_arcsec(x)</b> - Returns inverse sec value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arcsec(1))  # Output: 0</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arcsec(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>21. <b style="color: red;">Math_arccosec(x)</b> - Returns inverse cosec value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arccosec(1))  # Output: 1.5708...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arccosec(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>22. <b style="color: red;">Math_arccot(x)</b> - Returns inverse cot value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arccot(1))  # Output: 0.7854...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arccot(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>23. <b style="color: red;">Math_sinh(x)</b> - Returns the hyperbolic sin value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_sinh(1))  # Output: 1.1752...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_sinh(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>24. <b style="color: red;">Math_cosh(x)</b> - Returns the hyperbolic cos value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_cosh(1))  # Output: 1.5430...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_cosh(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>25. <b style="color: red;">Math_tanh(x)</b> - Returns the hyperbolic tan value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_tanh(1))  # Output: 0.7615...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_tanh(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>26. <b style="color: red;">Math_sech(x)</b> - Returns the hyperbolic sec value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_sech(1))  # Output: 0.6480...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_sech(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>27. <b style="color: red;">Math_cosech(x)</b> - Returns the hyperbolic cosec value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_cosech(1))  # Output: 0.8509...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_cosech(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>28. <b style="color: red;">Math_coth(x)</b> - Returns the hyperbolic cot value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_coth(1))  # Output: 1.3130...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_coth(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>29. <b style="color: red;">Math_arcsinh(x)</b> - Returns the hyperbolic inverse sin value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arcsinh(1))  # Output: 0.8813...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arcsinh(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>30. <b style="color: red;">Math_arccosh(x)</b> - Returns the hyperbolic inverse cos value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arccosh(1))  # Output: 0</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arccosh(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>31. <b style="color: red;">Math_arctanh(x)</b> - Returns the hyperbolic inverse tan value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arctanh(0.5))  # Output: 0.5493...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arctanh(0.5))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>32. <b style="color: red;">Math_arcsech(x)</b> - Returns the hyperbolic inverse sec value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arcsech(1))  # Output: 0</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arcsech(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>33. <b style="color: red;">Math_arccosech(x)</b> - Returns the hyperbolic inverse cosec value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arccosech(1))  # Output: 0.8813...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arccosech(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
+
+        <h4>34. <b style="color: red;">Math_arccoth(x)</b> - Returns the hyperbolic inverse cot value of x.</h4>
+        <div class="doc-container">
+            <div class="docs">
+                <p>serveChai(Math_arccoth(1))  # Output: 0.5493...</p>
+            </div>
+        </div>
+        <button class="btn" onclick='copyToClipboard(`serveChai(Math_arccoth(1))`)'>Copy</button>
+        <hr class="subtitle-hr">
         
             <h2 class="section-title" id="error-handling">Error Handling</h2>
             <p>Using try-catch blocks to handle errors...</p>
