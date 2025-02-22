@@ -224,6 +224,102 @@
         .note-alert p{
             margin-left: 10px;
         }
+
+        /* Add this to your existing CSS */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: 0;
+                padding: 10px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .sidebar h2 {
+                margin-top: 20px;
+            }
+
+            .sidebar a {
+                padding: 5px 0;
+            }
+
+            .doc-container {
+                height: auto;
+            }
+
+            .docs {
+                height: auto;
+                padding: 10px;
+            }
+
+            .docs p {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                padding: 5px 10px;
+            }
+
+            footer {
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                padding: 5px;
+            }
+
+            .main-content {
+                padding: 5px;
+            }
+
+            .docs p {
+                font-size: 12px;
+            }
+
+            .btn {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            nav a {
+                padding: 5px;
+            }
+
+            footer {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1034,7 +1130,7 @@
             </div> <br>
             <hr class="subtitle-hr">
 
-            <h2>Not</h2>
+            <h2>Not</</h2>
             <p>The <span style="color: red; background-color:#ddd3d3; display:inline-block; width:3.5rem; text-align:center">not</span> keyword is a logical operator, and is used to reverse the result of the conditional statement:</p>
 
             <h3>Example:</h3>
@@ -1959,6 +2055,8 @@
     </footer>
 
     <script>
+        
+
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
@@ -1993,7 +2091,7 @@
         }
 
         const copyCode2 = () => {
-            const button_text = document.getElementById("btn2")
+            const button_text = document.getElementById("btn2");
             
             const codeText = `cup x = 4;\t# x is of type int\ncup x = "Kirti";\t# x is now of type str\nserveChai(x);`;
             navigator.clipboard.writeText(codeText).then(() => {
@@ -2001,40 +2099,10 @@
             }, () => {
                 console.log("Failed to copy code.");
             });
-            button_text.textContent = "Copied!"
-            setTimeout(()=>{
-                button_text.textContent = "Copy"
-            }, 10000)
-        }
-
-        const copyCode3 = () => {
-            const button_text = document.getElementById("btn3")
-            
-            const codeText = `cup x = str(3);\t# x will be '3'\ncup y = int(3);\t# y will be 3\ncup z = float(3);\t# z will be 3.0`;
-            navigator.clipboard.writeText(codeText).then(() => {
-                console.log("Code copied to clipboard!");
-            }, () => {
-                console.log("Failed to copy code.");
-            });
-            button_text.textContent = "Copied!"
-            setTimeout(()=>{
-                button_text.textContent = "Copy"
-            }, 10000)
-        }
-
-        const copyCode4 = () => {
-            const button_text = document.getElementById("btn4")
-            
-            const codeText = `cup x = 5;\ncup y = "John";\nserveChai(type_chai(x))\t# "number"\nserveChai(type_chai(y))\t# "string"`;
-            navigator.clipboard.writeText(codeText).then(() => {
-                console.log("Code copied to clipboard!");
-            }, () => {
-                console.log("Failed to copy code.");
-            });
-            button_text.textContent = "Copied!"
-            setTimeout(()=>{
-                button_text.textContent = "Copy"
-            }, 10000)
+            button_text.textContent = "Copied!";
+            setTimeout(() => {
+                button_text.textContent = "Copy";
+            }, 10000);
         }
 
         const copyCode5 = () => {

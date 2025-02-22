@@ -293,6 +293,154 @@
             cursor: pointer;
             display: block;
         }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: 0;
+                padding: 10px;
+            }
+        
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 10px;
+            }
+        
+            .sidebar h2 {
+                margin-top: 20px;
+            }
+        
+            .sidebar a {
+                padding: 5px 0;
+            }
+        
+            .doc-container {
+                height: auto;
+            }
+        
+            .docs {
+                height: auto;
+                padding: 10px;
+            }
+        
+            .docs p {
+                font-size: 14px;
+            }
+        
+            .btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        
+            nav a {
+                padding: 5px 10px;
+            }
+        
+            footer {
+                font-size: 0.8em;
+            }
+        
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .text {
+                padding-right: 0;
+                text-align: center;
+            }
+        
+            .code-image {
+                text-align: center;
+                margin-top: 20px;
+            }
+        
+            .features .feature-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .feature {
+                width: 100%;
+                max-width: none;
+            }
+        
+            #snippet_get_started img {
+                width: 100%;
+                height: auto;
+            }
+        
+            #snippet_get_started button {
+                width: auto;
+                height: auto;
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .sidebar {
+                padding: 5px;
+            }
+        
+            .main-content {
+                padding: 5px;
+            }
+        
+            .docs p {
+                font-size: 12px;
+            }
+        
+            .btn {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+        
+            header {
+                padding: 10px;
+            }
+        
+            nav a {
+                padding: 5px;
+            }
+        
+            footer {
+                padding: 10px;
+            }
+        
+            .hero h1 {
+                font-size: 2em;
+            }
+        
+            .hero p {
+                font-size: 1em;
+            }
+        
+            .features .feature-container {
+                gap: 10px;
+            }
+        
+            .feature {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -392,4 +540,4 @@
         <p>&copy; 2024 ChaiScript | <a href="#docs">Documentation</a> | <a href="mailto:zishan.s@somaiya.edu" target="_blank">Contact Us</a></p>
     </footer>
 </body>
-</html>    
+</html>

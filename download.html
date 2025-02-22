@@ -151,6 +151,100 @@
             margin-top: 10px;
             margin-bottom: 20px;
         }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                padding: 5px 10px;
+            }
+
+            footer {
+                font-size: 0.8em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            .steps {
+                margin-top: 10px;
+            }
+
+            .step {
+                padding: 15px;
+            }
+
+            .step h3 {
+                font-size: 1.2em;
+            }
+
+            .step p, .step li {
+                font-size: 0.9em;
+            }
+
+            .step-image {
+                width: 100%;
+                max-width: none;
+                margin-top: 10px;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 12px;
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            nav a {
+                padding: 5px;
+            }
+
+            footer {
+                padding: 10px;
+            }
+
+            .content h1 {
+                font-size: 1.5em;
+            }
+
+            .step h3 {
+                font-size: 1.1em;
+            }
+
+            .step p, .step li {
+                font-size: 0.8em;
+            }
+
+            .btn {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+
+            .step-image {
+                margin-top: 5px;
+            }
+        }
     </style>
 </head>
 <body>
