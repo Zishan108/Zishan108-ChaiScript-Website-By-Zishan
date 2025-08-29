@@ -1,543 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/ChaiScript.ico">
-    <title>ChaiScript - Brew Up Your Code</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/ChaiScript.ico">
+  <title>ChaiScript - Brew Up Your Code</title>
 
+  <!-- AOS + Prism -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 
-    <style>
-        /* Basic styling to match the Node.js theme */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f4f6;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(135deg, #333, #27ae60);
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        header .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        header .logo img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 12px;
-            transition: background-color 0.3s;
-        }
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-        }
-        .hero {
-            background-color: #2c3e50;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        .btn {
-            background-color: #27ae60;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease-in;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        .btn:hover{
-            background-color: #15ff00;
-            border-radius: 5px;
-            transform: translateY(-2px);
-        }
-        .btn:active{
-            transform: scale(0.97);
-        }
-        .features, .getting-started, .acknowledgment {
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .features h2, .getting-started h2, .acknowledgment h2 {
-            margin-bottom: 20px;
-        }
-        .feature {
-            display: inline-block;
-            width: 30%;
-            margin: 10px;
-            text-align: left;
-        }
-        footer {
-            background: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9em;
-        }
-        footer a {
-            color: #27ae60;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            background-color: #2c3e50;
-            color: white;
-            padding: 80px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hero-content {
-            display: flex;
-            align-items: center;
-            max-width: 1200px;
-            width: 100%;
-        }
-        
-        .text {
-            flex: 1;
-            padding-right: 20px;
-            text-align: left;
-        }
-        
-        .text h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-        
-        .text p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        
-        .code-image {
-            flex: 1;
-            text-align: right;
-        }
-        
-        .code-image img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #333;
-            border-radius: 8px;
-        }
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6;
+      color: #333;
+    }
 
-        .features {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #f7f7f7;
-        }
-        
-        .features h2 {
-            margin-bottom: 30px;
-        }
-        
-        .feature-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 20px; /* Spacing between cards */
-        }
-        
-        .feature {
-            width: 80%; /* Adjust the width as needed */
-            max-width: 600px; /* Limit the maximum width */
-            padding: 20px;
-            min-height: 150px; /* Set a consistent height */
-            text-align: left;
-            background-color: rgb(234, 234, 234);
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .feature h3 {
-            margin-top: 0;
-        }
-        
-        .feature p {
-            margin-bottom: 0;
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px); /* Slight lift effect on hover */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Center header content */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-right: 20px; /* Space between logo and navigation */
-        }
-        
-        .logo img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-        
-        nav {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px; /* Space between navigation links */
-        }
-        
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1em;
-            padding: 8px 12px;
-            transition: background-color 0.3s;
-        }
-        
-        nav a:hover {
-            background-color: #555;
-            border-radius: 5px;
-        }
+    header {
+      background: linear-gradient(135deg, #333, #27ae60);
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    header .logo img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
 
-        #nav-download{
-            margin-top: 0px;
-        }
-        
-        #getting-started{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        #snippet_get_started{
-            position: relative;
-            text-align: start;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        #snippet_get_started img{
-            border-radius: 8px;
-        }
-        #snippet_get_started button{
-            position: absolute;
-            top: 1px;
-            right: 2px;
-            font-size: 14px;
-            background-color: #484848;
-            color: white;
-            width: 170px;
-            height: 33px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: block;
-        }
+    .hero {
+      background-color: #2c3e50;
+      color: white;
+      padding: 80px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-content {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+    }
+    .text {
+      flex: 1;
+      padding-right: 20px;
+      text-align: left;
+    }
+    .text h1 { font-size: 3em; margin: 0; }
+    .text p { font-size: 1.2em; margin-top: 10px; }
+    .code-image { flex: 1; text-align: right; }
+    .code-image img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
 
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-        
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                top: 0;
-                padding: 10px;
-            }
-        
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-                padding: 10px;
-            }
-        
-            .sidebar h2 {
-                margin-top: 20px;
-            }
-        
-            .sidebar a {
-                padding: 5px 0;
-            }
-        
-            .doc-container {
-                height: auto;
-            }
-        
-            .docs {
-                height: auto;
-                padding: 10px;
-            }
-        
-            .docs p {
-                font-size: 14px;
-            }
-        
-            .btn {
-                padding: 8px 15px;
-                font-size: 14px;
-            }
-        
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-        
-            nav a {
-                padding: 5px 10px;
-            }
-        
-            footer {
-                font-size: 0.8em;
-            }
-        
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        
-            .text {
-                padding-right: 0;
-                text-align: center;
-            }
-        
-            .code-image {
-                text-align: center;
-                margin-top: 20px;
-            }
-        
-            .features .feature-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .feature {
-                width: 100%;
-                max-width: none;
-            }
-        
-            #snippet_get_started img {
-                width: 100%;
-                height: auto;
-            }
-        
-            #snippet_get_started button {
-                width: auto;
-                height: auto;
-                font-size: 12px;
-                padding: 5px 10px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .sidebar {
-                padding: 5px;
-            }
-        
-            .main-content {
-                padding: 5px;
-            }
-        
-            .docs p {
-                font-size: 12px;
-            }
-        
-            .btn {
-                padding: 5px 10px;
-                font-size: 12px;
-            }
-        
-            header {
-                padding: 10px;
-            }
-        
-            nav a {
-                padding: 5px;
-            }
-        
-            footer {
-                padding: 10px;
-            }
-        
-            .hero h1 {
-                font-size: 2em;
-            }
-        
-            .hero p {
-                font-size: 1em;
-            }
-        
-            .features .feature-container {
-                gap: 10px;
-            }
-        
-            .feature {
-                padding: 10px;
-            }
-        }
-    </style>
+    .btn {
+      background-color: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease-in;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: inline-block;
+    }
+    .btn:hover { background-color: #15ff00; transform: translateY(-2px); }
+    .btn:active { transform: scale(0.97); }
+
+    .features, .getting-started, .acknowledgment {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .features h2, .getting-started h2, .acknowledgment h2 {
+      margin-bottom: 20px;
+    }
+    .feature-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+    .feature {
+      width: 80%;
+      max-width: 600px;
+      padding: 20px;
+      text-align: left;
+      background-color: #eaeaea;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    footer a { color: #27ae60; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* 🔹 Popup Styles */
+    #pageContent {
+      filter: none;
+      transition: filter 0.3s ease;
+    }
+    body.popup-active #pageContent {
+      filter: blur(6px);
+      pointer-events: none;
+      user-select: none;
+      overflow: hidden;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content { flex-direction: column; text-align: center; }
+      .text { padding-right: 0; text-align: center; }
+      .code-image { margin-top: 20px; text-align: center; }
+      .feature-container { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-    <script>
-        AOS.init({
-            duration: 800, // Animation duration in milliseconds
-            easing: 'ease-in-out', // Easing function
-            once: false // Whether animation should happen only once - while scrolling down
-        });
-        // Initialize AOS after the DOM has been fully loaded
-        window.onload = function() {
-            AOS.refresh();
-        };
+  <div id="pageContent">
 
-        const copyCode = () => {
-            const button_text = document.getElementById("copy-button")
-            
-            const codeText = `cup x = 10;\nif hot x > 5 then_chai\n    serveChai("x is greater than 5");\nsip`;
-            navigator.clipboard.writeText(codeText).then(() => {
-                console.log("Code copied to clipboard!");
-            }, () => {
-                console.log("Failed to copy code.");
-            });
-            button_text.textContent = "Copied!"
-            setTimeout(()=>{
-                button_text.textContent = "Copy To Clipboard!"
-            }, 10000)
-        }
-
-        
-    
-            
-            
-    </script>
-    
     <header>
-        <a href="#" class="logo">
-            <img src="img/ChaiScript.png" alt="ChaiScript Logo">
-            ChaiScript
-        </a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="docs.html">Docs</a>
-            <a href="download.html" class="btn">Downloads</a>
-        </nav>
+      <a href="#" class="logo">
+        <img src="img/ChaiScript.png" alt="ChaiScript Logo"> ChaiScript
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="docs.html">Docs</a>
+        <a href="download.html" class="btn">Downloads</a>
+      </nav>
     </header>
-        
-    <section class="hero" data-aos="fade-up" data-aos-once="false">
-        <div class="hero-content" >
-            <div class="text" data-aos="fade-right" data-aos-once="false">
-                <h1>Brew Up Your Code with ChaiScript</h1>
-                <p>A flavorful language inspired by the elegance of Python and the flexibility of JavaScript.</p>
-                <p>An Interpreted language which is best suitable for learning</p>
-                <a href="https://drive.google.com/uc?export=download&id=13BKOA-Y9YtFsOW5lTPOhBrMCHHPLIzO5" class="btn">Download ChaiScript</a> <br> <br><br> 
-                <a href="https://marketplace.visualstudio.com/items?itemName=Zishan1212.chaiscript" class="btn" target="_blank">Download ChaiScript VS Code Extension</a>
-            </div>
-            <div class="code-image" data-aos="fade-left" data-aos-once="false">
-                <img src="img/snippet_home.png" alt="ChaiScript Code Example" />
-            </div>
+
+    <section class="hero" data-aos="fade-up">
+      <div class="hero-content">
+        <div class="text" data-aos="fade-right">
+          <h1>Brew Up Your Code with ChaiScript</h1>
+          <p>A flavorful language inspired by Python’s elegance and JavaScript’s flexibility.</p>
+          <p>Perfect for learning with interactive scripting.</p>
+          <a href="https://drive.google.com/uc?export=download&id=13BKOA-Y9YtFsOW5lTPOhBrMCHHPLIzO5" class="btn">Download ChaiScript</a>
+          <br><br><br>
+          <a href="https://marketplace.visualstudio.com/items?itemName=Zishan1212.chaiscript" class="btn" target="_blank">Download VS Code Extension</a>
         </div>
-    </section>
-    
-    <section class="features" id="features" data-aos="fade-up" data-aos-once="false">
-        <h2>Core Features</h2>
-        <div class="feature-container">
-            <div class="feature" data-aos="fade-right" data-aos-once="false">
-                <h3>Elegant Syntax</h3>
-                <p>Write clean, readable code with Python and shell script inspired syntax.</p>
-            </div>
-            <div class="feature" data-aos="fade-up" data-aos-once="false">
-                <h3>Built-In Data Structures</h3>
-                <p>Includes Strings, Lists, and more, with built-in methods for easy manipulation.</p>
-            </div>
-            <div class="feature" data-aos="fade-left" data-aos-once="false">
-                <h3>Chai-Inspired Functions</h3>
-                <p>Unique functions tailored to bring the warmth of chai into your code.</p>
-            </div>
+        <div class="code-image" data-aos="fade-left">
+          <img src="img/snippet_home.png" alt="ChaiScript Code Example" />
         </div>
+      </div>
     </section>
-    
-    <section class="getting-started" id="getting-started" data-aos="fade-up" data-aos-once="false">
-        <h2>Getting Started</h2>
-        <div id="snippet_get_started">
-            <img src="img/snippet_get-started.png" alt="" width="500px" height="300px">
-            <button id="copy-button" onclick="copyCode()">Copy To Clipboard</button>
-            <p>Explore ChaiScript’s easy-to-use syntax and powerful features.</p>
+
+    <section class="features" id="features" data-aos="fade-up">
+      <h2>Core Features</h2>
+      <div class="feature-container">
+        <div class="feature">
+          <h3>Elegant Syntax</h3>
+          <p>Readable, clean code inspired by Python and shell scripting.</p>
         </div>
+        <div class="feature">
+          <h3>Built-In Data Structures</h3>
+          <p>Strings, Lists, and more with intuitive built-in methods.</p>
+        </div>
+        <div class="feature">
+          <h3>Chai-Inspired Functions</h3>
+          <p>Unique, warm, and flavorful functions designed for learning.</p>
+        </div>
+      </div>
     </section>
-    
-    <section class="acknowledgment" id="about" data-aos="fade-up" data-aos-once="false">
-        <h2>Acknowledgment</h2>
-        <p>Inspired by the beauty of Chai and the elegance of Python and JavaScript.</p>
+
+    <section class="getting-started" id="getting-started" data-aos="fade-up">
+      <h2>Getting Started</h2>
+      <div id="snippet_get_started">
+        <img src="img/snippet_get-started.png" alt="" width="500px" height="300px">
+        <button id="copy-button" onclick="copyCode()">Copy To Clipboard</button>
+        <p>Explore ChaiScript’s easy-to-use syntax and powerful features.</p>
+      </div>
     </section>
-    
+
+    <section class="acknowledgment" id="about" data-aos="fade-up">
+      <h2>Acknowledgment</h2>
+      <p>Inspired by the warmth of Chai and the simplicity of Python & JavaScript.</p>
+    </section>
+
     <footer>
-        <p>Publisher and author of the website and language: <a href="https://github.com/Zishan108" target="_blank">Zishan</a> </p>
-        <p>&copy; 2024 ChaiScript | <a href="#docs">Documentation</a> | <a href="mailto:zishan.s@somaiya.edu" target="_blank">Contact Us</a></p>
+      <p>Publisher and author: <a href="https://github.com/Zishan108" target="_blank">Zishan</a></p>
+      <p>&copy; 2024 ChaiScript | <a href="#docs">Documentation</a> | <a href="mailto:zishan.s@somaiya.edu" target="_blank">Contact Us</a></p>
     </footer>
+  </div>
+
+  <!-- 🔹 Popup -->
+  <div id="whatsNewPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>🚀 What's New in ChaiScript</h2>
+      <p>✨ Added <b>Dictionary</b> support</p>
+      <p>⚡ Introduced <b>Exception Handling</b></p>
+      <br>
+      <a href="docs.html#whats-new" class="btn">Read More</a>
+    </div>
+  </div>
+
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out' });
+
+    function copyCode() {
+      const button_text = document.getElementById("copy-button");
+      const codeText = `cup x = 10;\nif hot x > 5 then_chai\n    serveChai("x is greater than 5");\nsip`;
+      navigator.clipboard.writeText(codeText);
+      button_text.textContent = "Copied!";
+      setTimeout(()=>{ button_text.textContent = "Copy To Clipboard!"; }, 2000);
+    }
+
+    function openPopup() {
+      document.getElementById("whatsNewPopup").style.display = "flex";
+      document.body.classList.add("popup-active");
+    }
+    function closePopup() {
+      document.getElementById("whatsNewPopup").style.display = "none";
+      document.body.classList.remove("popup-active");
+    }
+
+    window.onload = function() {
+      AOS.refresh();
+      setTimeout(openPopup, 2000); // ⏳ show popup after 3s
+    };
+  </script>
 </body>
 </html>
