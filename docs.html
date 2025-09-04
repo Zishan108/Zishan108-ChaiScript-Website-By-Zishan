@@ -392,10 +392,12 @@
             <a href="#ChaiScript-Number">Numbers</a>
             <a href="#ChaiScript-Strings">Strings</a>
             <a href="#ChaiScript-List">List</a>
+            <a href="#ChaiScript-Dictionary">Dictionary</a>
             <a href="#ChaiScript-Booleans">Booleans</a>
             <a href="#Operators">Operators</a>
             <a href="#ChaiScript-if_else">ChaiScript if..else</a>
             <a href="#functions">Functions</a>
+            <a href="#ChaiScript-Exceptions">Exception Handling</a>
             <a href="#built-in_functions">Built-In Functions</a>
             <a href="#for-loop">For Loop</a>
             <a href="#while-loop">While Loop</a>
@@ -1020,6 +1022,140 @@
                     </div> <br>
                     <hr class="title-hr">
 
+                    <h2 class="section-title" id="ChaiScript-Dictionary">ChaiScript Dictionary</h2>
+                    <p>
+                    Dictionaries were introduced in <b style="color: red;">ChaiScript v1.1.0</b>.  
+                    A dictionary stores <b>key–value pairs</b>, letting you organize data and fetch values quickly by their keys.
+                    </p>
+
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup student = {"name": "Zishan", "age": 20, "course": "IT"} <br>
+                    serveChai(dict_get(student, "name"))   # Output: Zishan <br>
+                    serveChai(dict_get(student, "age"))    # Output: 20
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 20, "course": "IT"}\nserveChai(dict_get(student, "name"))\nserveChai(dict_get(student, "age"))`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h3>📌 Dictionary Features</h3>
+
+                    <h4>1. Creating a Dictionary</h4>
+                    <p>Use curly braces <code>{}</code> with key–value pairs.</p>
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup info = {"lang": "ChaiScript", "version": 1.1}
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup info = {"lang": "ChaiScript", "version": 1.1}`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h4>2. Accessing Values</h4>
+                    <p>Use <code>dict_get(dict, key)</code> for safe lookups. If the key doesn’t exist, <code>null</code> is returned.</p>
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup student = {"name": "Zishan"} <br>
+                    serveChai(dict_get(student, "name"))  # Output: Zishan <br>
+                    serveChai(dict_get(student, "age"))   # Output: null
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan"}\nserveChai(dict_get(student, "name"))\nserveChai(dict_get(student, "age"))`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h4>3. Checking if a Key Exists</h4>
+                    <p>Use <code>dict_has(dict, key)</code> to check if a key is present.</p>
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup student = {"name": "Zishan"} <br>
+                    serveChai(dict_has(student, "name"))  # Output: true <br>
+                    serveChai(dict_has(student, "age"))   # Output: false
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan"}\nserveChai(dict_has(student, "name"))\nserveChai(dict_has(student, "age"))`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h4>4. Getting Keys and Values</h4>
+                    <p>Use <code>dict_keys(dict)</code> to list all keys and <code>dict_values(dict)</code> to list all values.</p>
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup student = {"name": "Zishan", "age": 20} <br>
+                    serveChai(dict_keys(student))   # Output: ["name", "age"] <br>
+                    serveChai(dict_values(student)) # Output: ["Zishan", 20]
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 20}\nserveChai(dict_keys(student))\nserveChai(dict_values(student))`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h4>5. Updating Dictionaries</h4>
+                    <p>Use <code>dict_update(dict1, dict2)</code> to merge one dictionary into another.</p>
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup d1 = {"a": 1} <br>
+                    cup d2 = {"b": 2} <br>
+                    dict_update(d1, d2) <br>
+                    serveChai(d1)   # Output: {"a": 1, "b": 2}
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup d1 = {"a": 1}\ncup d2 = {"b": 2}\ndict_update(d1, d2)\nserveChai(d1)`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h4>6. Removing Items</h4>
+                    <p>Use <code>dict_pop(dict, key, default)</code> to remove a key. Returns the value if found, otherwise the default or <code>null</code>.</p>
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup student = {"name": "Zishan", "age": 20} <br>
+                    serveChai(dict_pop(student, "age"))   # Output: 20 <br>
+                    serveChai(student)                    # Output: {"name": "Zishan"} <br>
+                    serveChai(dict_pop(student, "grade", "N/A")) # Output: N/A
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 20}\nserveChai(dict_pop(student, "age"))\nserveChai(student)\nserveChai(dict_pop(student, "grade", "N/A"))`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h4>7. Clearing a Dictionary</h4>
+                    <p>Use <code>dict_clear(dict)</code> to remove all key–value pairs.</p>
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup student = {"name": "Zishan", "age": 20} <br>
+                    dict_clear(student) <br>
+                    serveChai(student)  # Output: {}
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 20}\ndict_clear(student)\nserveChai(student)`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h4>8. Copying a Dictionary</h4>
+                    <p>Use <code>dict_copy(dict)</code> to create a shallow copy.</p>
+                    <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                    <code style="background:none;">
+                    cup student = {"name": "Zishan"} <br>
+                    cup clone = dict_copy(student) <br>
+                    serveChai(clone)  # Output: {"name": "Zishan"}
+                    </code>
+                    </div>
+                    <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan"}\ncup clone = dict_copy(student)\nserveChai(clone)`)'>Copy</button>
+
+                    <hr class="subtitle-hr">
+
+                    <h4>9. Summary</h4>
+                    <ul>
+                    <li>✅ Keys can be <b>String</b> or <b>Number</b>.</li>
+                    <li>✅ Functions: <b>dict_get, dict_has, dict_keys, dict_values, dict_update, dict_pop, dict_clear, dict_copy</b>.</li>
+                    <li>⚡ Safe lookups always return <code>null</code> if the key doesn’t exist.</li>
+                    <li>🚀 Designed to manage structured data efficiently in ChaiScript.</li>
+                    </ul>
+
+                
+                    <hr class="title-hr">
+
                     <h2 class="section-title" id="ChaiScript-Booleans">Booleans</h2>
                     <p>In programming you often need to know if an expression is
                     <pre style="display: inline;"><code style="color: red;">true</code></pre> or
@@ -1490,6 +1626,135 @@
                             onclick='copyToClipboard(`cup result = add(3, 4)\nserveChai(result)`)'>Copy</button>
                         <hr class="title-hr">
 
+                        <h2 class="section-title" id="ChaiScript-Exceptions">Exception Handling in ChaiScript</h2>
+                        <p>
+                        Exception handling was introduced in <b style="color: red;">ChaiScript v1.1.0</b>.  
+                        It lets your script catch runtime errors (division by zero, invalid operations, bad accesses) and handle them gracefully using <code>try_chai</code>, <code>catch_chai</code>, and <code>sip</code>.
+                        </p>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>📌 Basic Structure</h3>
+                        <p>The general format:</p>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:700px;">
+                        <code style="background:none;">
+                        try_chai then_chai<br>
+                        &nbsp;&nbsp;# code that may throw an error<br>
+                        catch_chai then_chai<br>
+                        &nbsp;&nbsp;# handle the error here<br>
+                        sip
+                        </code>
+                        </div>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>⚡ Example: Division By Zero</h3>
+                        <p>If an error occurs inside <code>try_chai</code>, execution jumps to <code>catch_chai</code>.</p>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:700px;">
+                        <code style="background:none;">
+                        try_chai then_chai<br>
+                        &nbsp;&nbsp;cup person = 5 / 0<br>
+                        catch_chai then_chai<br>
+                        &nbsp;&nbsp;serveChai("Error: Division By Zero")<br>
+                        sip
+                        </code>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard("try_chai then_chai\n\tcup person = 5 / 0\ncatch_chai then_chai\n\tserveChai(\"Error: Division By Zero\")\nsip")'>Copy</button>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>🧩 Catching the error object (optional)</h3>
+                        <p>You can capture the runtime error into a variable to inspect or print its message. Use <code>catch_chai &lt;errName&gt; then_chai</code>:</p>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:700px;">
+                        <code style="background:none;">
+                        try_chai then_chai<br>
+                        &nbsp;&nbsp;cup x = 10 / 0<br>
+                        catch_chai e then_chai<br>
+                        &nbsp;&nbsp;serveChai("Caught: " + e)<br>
+                        sip
+                        </code>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard("try_chai then_chai\n\tcup x = 10 / 0\ncatch_chai e then_chai\n\tserveChai(\"Caught: \" + e)\nsip")'>Copy</button>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>📖 Example: Invalid dictionary access</h3>
+                        <p>Try a lookup that might fail and handle it without crashing.</p>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:700px;">
+                        <code style="background:none;">
+                        cup student = {"name": "Zishan"}<br><br>
+                        try_chai then_chai<br>
+                        &nbsp;&nbsp;serveChai(dict_get(student, "age"))<br>
+                        catch_chai then_chai<br>
+                        &nbsp;&nbsp;serveChai("Error: Key not found")<br>
+                        sip
+                        </code>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard("cup student = {\"name\": \"Zishan\"}\n\ntry_chai then_chai\n\tserveChai(dict_get(student, \"age\"))\ncatch_chai then_chai\n\tserveChai(\"Error: Key not found\")\nsip")'>Copy</button>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>🔁 Multiple statements & flow</h3>
+                        <p>Both <code>try_chai</code> and <code>catch_chai</code> can contain multiple statements. Only the code after the error in the try block is skipped.</p>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:700px;">
+                        <code style="background:none;">
+                        try_chai then_chai<br>
+                        &nbsp;&nbsp;serveChai("Before error")<br>
+                        &nbsp;&nbsp;cup x = 10 / 0<br>
+                        &nbsp;&nbsp;serveChai("This will not run")<br>
+                        catch_chai then_chai<br>
+                        &nbsp;&nbsp;serveChai("Handled: error occurred")<br>
+                        &nbsp;&nbsp;serveChai("Continuing...")<br>
+                        sip
+                        </code>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard("try_chai then_chai\n\tserveChai(\"Before error\")\n\tcup x = 10 / 0\n\tserveChai(\"This will not run\")\ncatch_chai then_chai\n\tserveChai(\"Handled: error occurred\")\n\tserveChai(\"Continuing...\")\nsip")'>Copy</button>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>✅ Example: No error (catch skipped)</h3>
+                        <p>If everything in <code>try_chai</code> runs fine, the <code>catch_chai</code> block is skipped.</p>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:700px;">
+                        <code style="background:none;">
+                        try_chai then_chai<br>
+                        &nbsp;&nbsp;serveChai("All good")<br>
+                        &nbsp;&nbsp;cup x = 10 / 2<br>
+                        catch_chai then_chai<br>
+                        &nbsp;&nbsp;serveChai("This won't run")<br>
+                        sip
+                        </code>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard("try_chai then_chai\n\tserveChai(\"All good\")\n\tcup x = 10 / 2\ncatch_chai then_chai\n\tserveChai(\"This will not run\")\nsip")'>Copy</button>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>🔒 Behavior notes & best practices</h3>
+                        <ul>
+                        <li>✅ Use <code>try_chai</code> to wrap code that might fail.</li>
+                        <li>✅ Use <code>catch_chai</code> to recover or log the error; optionally capture the error name like <code>catch_chai e then_chai</code>.</li>
+                        <li>✅ <code>sip</code> always closes the try/catch block.</li>
+                        <li>⚠️ If an error is not caught, it will propagate and can stop the program — handle expected failure points.</li>
+                        <li>⚡ Keep try blocks small: narrow the risky statements so you don't accidentally swallow unrelated failures.</li>
+                        </ul>
+
+                        <hr class="subtitle-hr">
+
+                        <h4>Quick reference</h4>
+                        <ul>
+                        <li><b>try_chai then_chai</b> — start risky block</li>
+                        <li><b>catch_chai then_chai</b> — handle errors</li>
+                        <li><b>catch_chai &lt;name&gt; then_chai</b> — capture error object into &lt;name&gt;</li>
+                        <li><b>sip</b> — end the try/catch scope</li>
+                        </ul>
+
+                        <hr class="title-hr">
+
                         <h2 class="section-title" id="built-in_functions">Built-in Functions</h2>
                         <p>This section covers the built-in functions available in ChaiScript, categorized by their
                             functionality. Each function includes a description and example usage.</p>
@@ -1503,7 +1768,11 @@
                                 <p>serveChai("Hello, Chai!") # Output: Hello, Chai!</p>
                             </div>
                         </div> <br>
-                        <button class="btn" onclick='copyToClipboard(`serveChai("Hello, Chai!")`)'>Copy</button>
+                        <button class="btn" onclick="copyToClipboard('serveChai(&quot;Hello, Chai!&quot;)')">Copy</button>
+
+
+
+
                         <hr class="subtitle-hr">
 
                         <h4>2. <b style="color: red;">serve_ret(arg)</b> - Prints and returns the argument.</h4>
@@ -1893,6 +2162,84 @@
                         <button class="btn"
                             onclick='copyToClipboard(`cup lst = ["a", "b", "c"]; serveChai(join_to_str(lst, "-"))`)'>Copy</button>
                         <hr class="subtitle-hr">
+
+                        <h3>Dictionary Functions</h3>
+                        <p>These functions operate on dictionaries (key–value mappings).</p>
+
+                        <h4>1. <b style="color: red;">dict_has(dict, key)</b> - Checks if the key exists in the dictionary.</h4>
+                        <div class="doc-container">
+                        <div class="docs">
+                            <p>cup student = {"name": "Zishan", "age": 19}; serveChai(dict_has(student, "name")) # Output: true</p>
+                        </div>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 19}; serveChai(dict_has(student, "name"))`)'>Copy</button>
+                        <hr class="subtitle-hr">
+
+                        <h4>2. <b style="color: red;">dict_keys(dict)</b> - Returns a list of all keys.</h4>
+                        <div class="doc-container">
+                        <div class="docs">
+                            <p>cup student = {"name": "Zishan", "age": 19}; serveChai(dict_keys(student)) # Output: ["name", "age"]</p>
+                        </div>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 19}; serveChai(dict_keys(student))`)'>Copy</button>
+                        <hr class="subtitle-hr">
+
+                        <h4>3. <b style="color: red;">dict_values(dict)</b> - Returns a list of all values.</h4>
+                        <div class="doc-container">
+                        <div class="docs">
+                            <p>cup student = {"name": "Zishan", "age": 19}; serveChai(dict_values(student)) # Output: ["Zishan", 19]</p>
+                        </div>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 19}; serveChai(dict_values(student))`)'>Copy</button>
+                        <hr class="subtitle-hr">
+
+                        <h4>4. <b style="color: red;">dict_get(dict, key)</b> - Returns value of the key if it exists, else null.</h4>
+                        <div class="doc-container">
+                        <div class="docs">
+                            <p>cup student = {"name": "Zishan"}; serveChai(dict_get(student, "name")) # Output: Zishan</p>
+                            <p>serveChai(get(student, "age")) # Output: null</p>
+                        </div>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan"}; serveChai(dict_get(student, "name"))\nserveChai(get(student, "age"))`)'>Copy</button>
+                        <hr class="subtitle-hr">
+
+                        <h4>5. <b style="color: red;">dict_pop(dict, key, default)</b> - Removes and returns the value for the key. If not found, returns default/null.</h4>
+                        <div class="doc-container">
+                        <div class="docs">
+                            <p>cup student = {"name": "Zishan", "age": 19}; serveChai(dict_pop(student, "age")) # Output: 19</p>
+                            <p>serveChai(student) # Output: {"name": "Zishan"}</p>
+                        </div>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 19}; serveChai(dict_pop(student, "age"))\nserveChai(student)`)'>Copy</button>
+                        <hr class="subtitle-hr">
+
+                        <h4>6. <b style="color: red;">dict_update(dict1, dict2)</b> - Merges dict2 into dict1.</h4>
+                        <div class="doc-container">
+                        <div class="docs">
+                            <p>cup d1 = {"a": 1}; cup d2 = {"b": 2}; dict_update(d1, d2); serveChai(d1) # Output: {"a": 1, "b": 2}</p>
+                        </div>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard(`cup d1 = {"a": 1}; cup d2 = {"b": 2}; dict_update(d1, d2); serveChai(d1)`)'>Copy</button>
+                        <hr class="subtitle-hr">
+
+                        <h4>7. <b style="color: red;">dict_clear(dict)</b> - Removes all key–value pairs from the dictionary.</h4>
+                        <div class="doc-container">
+                        <div class="docs">
+                            <p>cup student = {"name": "Zishan", "age": 19}; dict_clear(student); serveChai(student) # Output: {}</p>
+                        </div>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan", "age": 19}; dict_clear(student); serveChai(student)`)'>Copy</button>
+                        <hr class="subtitle-hr">
+
+                        <h4>8. <b style="color: red;">dict_copy(dict)</b> - Returns a shallow copy of the dictionary.</h4>
+                        <div class="doc-container">
+                        <div class="docs">
+                            <p>cup student = {"name": "Zishan"}; cup clone = dict_copy(student); serveChai(clone) # Output: {"name": "Zishan"}</p>
+                        </div>
+                        </div>
+                        <button class="btn" onclick='copyToClipboard(`cup student = {"name": "Zishan"}; cup clone = dict_copy(student); serveChai(clone)`)'>Copy</button>
+                        <hr class="subtitle-hr">
+
 
                         <h3>Math Functions</h3>
                         <p>These functions provide mathematical constants and operations.</p>
