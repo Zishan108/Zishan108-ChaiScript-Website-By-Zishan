@@ -398,6 +398,7 @@
             <a href="#ChaiScript-if_else">ChaiScript if..else</a>
             <a href="#functions">Functions</a>
             <a href="#ChaiScript-Exceptions">Exception Handling</a>
+            <a href="#ChaiScript-FileHandling">File Handling</a>
             <a href="#built-in_functions">Built-In Functions</a>
             <a href="#for-loop">For Loop</a>
             <a href="#while-loop">While Loop</a>
@@ -448,7 +449,7 @@
 
                     <h2>Version 1.1.0</h2> <br>
 
-                    <h3>
+                <h3>
                     <ul>
                         <li>✨ <b>Dictionary Support:</b> ChaiScript now supports dictionaries, which allow you to store
                             and access data as key-value pairs. This is perfect for structured data like configurations,
@@ -463,7 +464,18 @@
                             more reliable. Example:</li>
                     </ul>
 
-                    </h3>
+                </h3>
+
+                <h2>Version 1.2.0</h2>
+
+                <h3>
+
+                    <ul>
+                        <li>☕ <b>File Handling Added:</b> ChaiScript now supports reading, writing, and appending files using built-in functions.</li>
+                        <li>📂 You can persist data, generate scripts, and work with external files directly.</li>
+                    </ul>
+
+                </h3>
 
 
                     <h3>These updates make ChaiScript more powerful and user-friendly. <b>Dictionaries</b> let you
@@ -1752,6 +1764,65 @@
                         <li><b>catch_chai &lt;name&gt; then_chai</b> — capture error object into &lt;name&gt;</li>
                         <li><b>sip</b> — end the try/catch scope</li>
                         </ul>
+
+                        <hr class="title-hr">
+
+                        <h2 class="section-title" id="ChaiScript-FileHandling">ChaiScript File Handling</h2>
+
+                        <p>
+                        File handling was introduced in <b style="color:red;">ChaiScript v1.2.0</b>.
+                        It allows you to read from files, write new content, and append data using simple chai-inspired functions.
+                        </p>
+
+                        <h3>📌 Opening a File</h3>
+                        <p>Use <code>brew_file(path, mode)</code> to open a file.</p>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                        <code style="background:none;">
+                        cup f = brew_file("test.txt", "w")
+                        </code>
+                        </div>
+
+                        <p><b>Modes:</b></p>
+                        <ul>
+                        <li><code>"r"</code> → Read</li>
+                        <li><code>"w"</code> → Write (overwrite)</li>
+                        <li><code>"a"</code> → Append</li>
+                        </ul>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>✍ Writing / Appending to a File</h3>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                        <code style="background:none;">
+                        cup f = brew_file("data.txt", "a") <br>
+                        pour_file(f, "Hello ChaiScript!\n") <br>
+                        seal_file(f)
+                        </code>
+                        </div>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>📖 Reading a File</h3>
+
+                        <div style="background-color:#fff; color:#27ae60; padding:5px; border-left:4px solid #27ae60; max-width:600px;">
+                        <code style="background:none;">
+                        cup f = brew_file("data.txt", "r") <br>
+                        cup content = sip_file(f) <br>
+                        serveChai(content) <br>
+                        seal_file(f)
+                        </code>
+                        </div>
+
+                        <hr class="subtitle-hr">
+
+                        <h3>⚠ Important Rule</h3>
+                        <p>
+                        Always pass the <b>file handle</b> (returned by <code>brew_file</code>) to
+                        <code>pour_file</code>, <code>sip_file</code>, and <code>seal_file</code>.
+                        Do <b>not</b> pass the file name string.
+                        </p>
 
                         <hr class="title-hr">
 
